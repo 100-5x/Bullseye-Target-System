@@ -147,5 +147,5 @@ void turn_targets( int seconds, int iterations ) {
 }
 
 void sysready() {
-   println("*    SYSTEM READY.    *"); \\
+   println("*    SYSTEM READY.    *"); 
 }
