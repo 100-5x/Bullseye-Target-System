@@ -1,5 +1,3 @@
-//#include <LowPower.h>
-
 // Include the AccelStepper library:
 //#define __DEBUG__
 
