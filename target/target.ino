@@ -1,8 +1,9 @@
-/***********Notice and Trouble shooting***************
- * New.
- 1.Connection and Diagram can be found here
- <https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299#Connection_Diagram>
+/*
+
+ 1. Connection and Diagram for DFPlayerMini can be found here: <https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299#Connection_Diagram>
  2. Board Design: https://easyeda.com/editor#id=9732d78825114e1f9470af595e8c2a05|cfccfb0ac82742d599bb365bfc38d4f2|02da22ace5ad4361b509632e239951c8|54cbbeacb0e44b48bd5351eefe88220c
+ 3. Supplying 12v to the board seems to yield the best result for the antenna.  Voltage can be reduced with the 10k pot
+
 */
 
 //#define __DEBUG__
@@ -17,8 +18,6 @@
 
 #include <SoftwareSerial.h>
 #include "DFRobotDFPlayerMini.h"
-//#include <LowPower.h>
-
 
 SoftwareSerial mySoftwareSerial(10, 11); // RX, TX
 DFRobotDFPlayerMini myDFPlayer;
@@ -55,7 +54,6 @@ void setup() {
 
 
 void loop() {
-  //LowPower.powerDown(SLEEP_250MS, ADC_OFF, BOD_OFF);
   int sensorTimed = digitalRead(timedPin);
   int sensorRapid = digitalRead(rapidPin);
   int sensorPractice = digitalRead(practicePin);
@@ -64,24 +62,18 @@ void loop() {
    if (sensorPractice == LOW) {
      println("Practice Button Pressed\n");
      turn_targets(1,5);
-     delay(3000);
-     digitalWrite(relayPin, FACE); 
    }
 
   // Timed Pin
    if (sensorTimed == LOW) {
      println ("Timed Button Pressed\n");
      turn_targets(20,2);
-     delay(3000);
-     digitalWrite(relayPin, FACE); 
-   }
+     }
   // Rapid Pin
   
    if (sensorRapid == LOW) {
     println ("Rapid Button Pushed\n");
      turn_targets(10,2);
-     delay(3000);
-     digitalWrite(relayPin, FACE); 
    }
 
 }
@@ -142,6 +134,11 @@ void turn_targets( int seconds, int iterations ) {
        digitalWrite(relayPin, AWAY);  
      
    }    
+     // sequence over;  Wait 3 seconds for all firing to cease.  Then return targets facing
+     // for center paper replacement.
+     
+     delay(3000);
+     digitalWrite(relayPin, FACE); 
 
       #ifdef __DEBUG__
         sysready();   
@@ -150,9 +147,5 @@ void turn_targets( int seconds, int iterations ) {
 }
 
 void sysready() {
-  
-  println("**********************");
-  println("*    SYSTEM READY    *"); 
-  println("**********************");
-
+   println("*    SYSTEM READY.    *"); \\
 }
