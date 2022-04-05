@@ -54,6 +54,8 @@ void setup() {
 
 
 void loop() {
+  digitalWrite(relayPin, FACE); 
+  
   int sensorTimed = digitalRead(timedPin);
   int sensorRapid = digitalRead(rapidPin);
   int sensorPractice = digitalRead(practicePin);
