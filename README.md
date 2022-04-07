@@ -7,7 +7,7 @@ This is the main controller.  When built, it has three momentary switches to act
 1. Arduino Nano
 2. 1k Resistor
 3. 10k PoT
-4. 4 2-pole Screw Terminals
+4. (4) 2-pole Screw Terminals
 5. [DFPlayer DFMini Module](https://www.amazon.com/DFPlayer-Controlled-Through-Arduino-Raspberry/dp/B09GPCCXT8/ref=sr_1_1_sspa?crid=1XVHF6SDF7TIW&keywords=dfplayer+mini&qid=1649339688&sprefix=DFPlayer%2Caps%2C241&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyRVpINDFZWElaMlNLJmVuY3J5cHRlZElkPUEwMjM2NTk1MTdGRVlITDg3UlNKQSZlbmNyeXB0ZWRBZElkPUEwOTUyNDM5MjRJNEsxNFkzMlY5NCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
 6. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
 7. [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
