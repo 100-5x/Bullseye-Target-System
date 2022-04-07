@@ -1,10 +1,3 @@
-/*
-
- 1. Connection and Diagram for DFPlayerMini can be found here: <https://www.dfrobot.com/wiki/index.php/DFPlayer_Mini_SKU:DFR0299#Connection_Diagram>
- 2. Board Design: https://easyeda.com/editor#id=9732d78825114e1f9470af595e8c2a05|cfccfb0ac82742d599bb365bfc38d4f2|02da22ace5ad4361b509632e239951c8|54cbbeacb0e44b48bd5351eefe88220c
- 3. Supplying 12v to the board seems to yield the best result for the antenna.  Voltage can be reduced with the 10k pot
-
-*/
 
 //#define __DEBUG__
 #ifdef __DEBUG__
