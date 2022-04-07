@@ -24,5 +24,17 @@ A simple MOSFET relay system to activate a solenoid to control the target turn. 
 [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
 [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 
+* Pin Out Correlations:
+  XMTR -> RCVR. 
+  
+  1 -> D2. 
+  
+  2 -> D3. 
+  
+  3 -> D1. 
+  
+  4 -> D0. 
+  
+
 ## Electric Turning System
 In case someone doesn't have a pneumatic actuator & Solenoid, build something out of a NEMA 17 or NEMA 23 motor to control the turn.  I'm currently using a [Stepper Driver Controller](https://www.amazon.com/dp/B08PKJG2ND?psc=1&ref=ppx_yo2ov_dt_b_product_details), in addition to the wireless receiver, buck converter, and Nano from above.  This is still in development. I'm testing using this [power supply](https://www.amazon.com/TalentCell-Rechargeable-3000mAh-Lithium-External/dp/B01M7Z9Z1N/ref=sr_1_5?crid=L7R0P4ZVJEPN&keywords=12v+battery+pack+cctv&qid=1649340217&sprefix=12v+battery+pack+cctv%2Caps%2C96&sr=8-5)
