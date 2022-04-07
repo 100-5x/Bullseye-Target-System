@@ -20,9 +20,9 @@ After soldering in the components, you can supply a recommended 12v to the board
 
 ## Wireless Relay
 A simple MOSFET relay system to activate a solenoid to control the target turn.  Items required:
-[MOSFET XY-MOS relay](https://www.amazon.com/High-Power-Trigger-Adjustment-Electronic-Brightness/dp/B0893MKNB2/ref=sr_1_5?crid=263H5VLQTNTTE&keywords=XY-MOS+MOSFET&qid=1649339921&sprefix=xy-mos+mosfet%2Caps%2C94&sr=8-5)
-[DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
-[Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+1. [MOSFET XY-MOS relay](https://www.amazon.com/High-Power-Trigger-Adjustment-Electronic-Brightness/dp/B0893MKNB2/ref=sr_1_5?crid=263H5VLQTNTTE&keywords=XY-MOS+MOSFET&qid=1649339921&sprefix=xy-mos+mosfet%2Caps%2C94&sr=8-5)
+2. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
+3. [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 
 * Pin Out Correlations:
   XMTR -> RCVR. 
