@@ -1,4 +1,4 @@
-# Bullseye-Target-System
+# Bullseye Turning Target System
 
 **PCB & Schematics created in [EasyEDA](http://www.easyeda.com/editor)**
 
