@@ -1,0 +1,37 @@
+As mentioned in another review, the pinouts don’t match up. Here is what I found:
+
+Pin Out Correlations:
+XMTR -> RCVR
+1 -> D2
+2 -> D3
+3 -> D1
+4 -> D0
+
+VT: This pin goes high (VCC) when either a signal is received or when the red LED on the PCB turns on - it seems to be the same line. VT could be used as an interrupt signal to a MCU which then could determine which DO - D3 lines are active.
+
+MODE memory retention: Yes, the receivers retain the MODE setting between power cycles.
+
+Setting the MODE is a little tricky; basically you do the following:
+
+1) RESET the RCVR to clear the MODE and forget any XMTR IDs:
+Press the LEARNING button 8x
+Expect RCVR LED flash 7x
+Wait 3 seconds
+2) Set the MODE:
+Press the LEARNING button 1 or 2 or 3 times depending on the mode you want to set
+Wait 3 seconds
+Expect the RCVR LED to turn OFF (*1)
+3) Learn the XMTR ID:
+Press the LEARNING button 1x
+Expect RCVR LED to turn ON
+Press any button on a XMTR PCB
+Expect the RCVR LED to turn OFF
+
+NOTE(*1) These devices are very touchy about the timing of the LEARNING button presses. You’ll need to fiddle around with them to get them to work. Sometimes the RCVR will go into learn mode after a few seconds at the end of step 2 above (i.e the PCB LED turns ON) - if this happens just press any button on an XMTR. However, once the MODE is set the RCVR can learn or re-learn one or more XMTR ID codes.
+
+Issues:
+1. As shown in the picture, of the 6 pieces I received 1 of the RCVRS needed to have the flux removed. No big deal, but I suggest you keep and eye on this issue as contaminates can stick to flux.
+2. The pins on the XMTR PCBs are too short to work with a standard protoboard. As shown I needed to solder a pin header strip to extend them. If you are mounting these on a PCB this won’t be a problem.
+3. MODE setting is a bit touchy
+
+Overall, these are very nice well built little 4-Channel XMTR/RCVRs. Even with the above issues I’ll give it 4/5 stars because they seem stable once configured and, to me, they inspire some intriguing circuit applications.
