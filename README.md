@@ -15,6 +15,9 @@ This is the main controller.  When built, it has three momentary switches to act
 9. 3 Momentary Switches / Buttons
 10. MicroSD Card
 
+#### Sound
+I downloaded the sound files from the following [Location](https://www.bullseyepistol.com/rangecmd.htm)
+
 ### Control System usaage
 After soldering in the components, you can supply a recommended 12v to the board, and use the 10k PoT to adjust the transmit power to the wireless transmitter.
 
