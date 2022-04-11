@@ -33,6 +33,7 @@ void setup() {
    pinMode(rapidPin, INPUT_PULLUP);
    pinMode(practicePin, INPUT_PULLUP);
    pinMode(relayPin,OUTPUT);
+   digitalWrite(relayPin, FACE); 
    #ifdef __DEBUG__
     Serial.begin(115200);
    #endif
