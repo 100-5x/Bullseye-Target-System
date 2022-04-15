@@ -14,7 +14,7 @@ This is the main controller.  When built, it has three momentary switches to act
 6. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
 7. [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 8. [PAM8403 Class D Amplifier Board](https://www.ebay.com/itm/234403673263)
-9. 2x[4ohm 3w speaker](https://www.amazon.com/Gikfun-Speaker-Stereo-Loudspeaker-Arduino/dp/B01LN8ONG4/ref=sr_1_1_sspa?crid=XZ93E4ER4P4C&keywords=4+ohm+3+watt+speaker&qid=1649986632&sprefix=4ohm+3%2Caps%2C203&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzTkhYR1NZSTVaUEFGJmVuY3J5cHRlZElkPUEwMzM2NTQySzNUMTVXMjZaN1dMJmVuY3J5cHRlZEFkSWQ9QTAyODE0NjFZUlBQRDNFWFhGQVQmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
+9. 2 x [4ohm 3w speaker](https://www.amazon.com/Gikfun-Speaker-Stereo-Loudspeaker-Arduino/dp/B01LN8ONG4/ref=sr_1_1_sspa?crid=XZ93E4ER4P4C&keywords=4+ohm+3+watt+speaker&qid=1649986632&sprefix=4ohm+3%2Caps%2C203&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzTkhYR1NZSTVaUEFGJmVuY3J5cHRlZElkPUEwMzM2NTQySzNUMTVXMjZaN1dMJmVuY3J5cHRlZEFkSWQ9QTAyODE0NjFZUlBQRDNFWFhGQVQmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
 10. 3 Momentary Switches / Buttons
 11. MicroSD Card
 
