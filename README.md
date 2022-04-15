@@ -6,7 +6,7 @@ This is my design of a functioning turning target system for NRA 25 yard pistol 
 
 ## Control-System
 This is the main controller.  When built, it has three momentary switches to activate Timed, Rapid and 1 second practice drills. Supplies needed:
-1. Arduino Nano
+1. [Arduino Nano or clone](https://www.amazon.com/Deegoo-ATmega328P-Microcontroller-Board-Arduino/dp/B07R9VWD39/ref=sr_1_38?crid=Y0E1K3OLPBAQ&keywords=nano+clone&qid=1649986708&sprefix=nano+clone%2Caps%2C81&sr=8-38)
 2. 1k Resistor
 3. 10k PoT
 4. (4) 2-pole Screw Terminals
