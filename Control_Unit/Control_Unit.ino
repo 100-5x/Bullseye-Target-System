@@ -127,13 +127,15 @@ void turn_targets( int seconds, int iterations ) {
        digitalWrite(relayPin, FACE); 
        delay(500);  // give targets time to turn.
        delay(seconds*1000);  
-       digitalWrite(relayPin, AWAY);  
+       digitalWrite(relayPin, AWAY); 
+      //Give Targets time to turn before initiating the next steps...
+       delay(3000); 
      
    }    
      // sequence over;  Wait 3 seconds for all firing to cease.  Then return targets facing
      // for center paper replacement.
      
-     delay(3000);
+     
      digitalWrite(relayPin, FACE); 
 
       #ifdef __DEBUG__
