@@ -6,14 +6,12 @@ WiFiServer server(80);
 String header;
 
 // Auxiliar variables to store the current output state
-String faceState = "off";
-String output27State = "off";
-
-const int face = 26;
+String activationPinState = "off";
+const int activationPin = 26;
 void setup() {
   Serial.begin(115200);
-  pinMode(face, OUTPUT);
-  digitalWrite(face, LOW);
+  pinMode(activationPin, OUTPUT);
+  digitalWrite(activationPin, LOW);
   Serial.print("Setting AP (Access Point)…");
   // Remove the password parameter, if you want the AP (Access Point) to be open
   WiFi.softAP(ssid);//, password);
@@ -50,12 +48,12 @@ void loop(){
             // turns the GPIOs on and off
             if (header.indexOf("GET /face") >= 0) {
               Serial.println("Targets should be facing");
-              faceState = "on";
-              digitalWrite(face, HIGH);
+              activationPinState = "on";
+              digitalWrite(activationPin, HIGH);
             } else if (header.indexOf("GET /edge") >= 0) {
               Serial.println("Targets Edge facing");
-              faceState = "off";
-              digitalWrite(face, LOW);
+              activationPinState = "off";
+              digitalWrite(activationPin, LOW);
             }
             
             // Display the HTML web page
@@ -73,9 +71,9 @@ void loop(){
             client.println("<body><h1>ESP32 Web Server</h1>");
             
             // Display current state, and ON/OFF buttons for GPIO 26  
-            client.println("<p>Target System " + faceState + "</p>");
-            // If the faceState is off, it displays the ON button       
-            if (faceState=="off") {
+            client.println("<p>Target System " + activationPinState + "</p>");
+            // If the activationPinState is off, it displays the ON button       
+            if (activationPinState=="off") {
               client.println("<p><a href=\"/face\"><button class=\"button\">ON</button></a></p>");
             } else {
               client.println("<p><a href=\"/edge\"><button class=\"button button2\">OFF</button></a></p>");
