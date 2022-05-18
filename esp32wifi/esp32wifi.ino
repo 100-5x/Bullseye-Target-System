@@ -48,14 +48,14 @@ void loop(){
             // turns the GPIOs on and off
             if (header.indexOf("GET /face") >= 0) {
               Serial.println("Targets should be facing");
-              activationPinState = "on";
+              //activationPinState = "on";
               digitalWrite(activationPin, HIGH);
             } else if (header.indexOf("GET /edge") >= 0) {
               Serial.println("Targets Edge facing");
-              activationPinState = "off";
+              //activationPinState = "off";
               digitalWrite(activationPin, LOW);
             }
-            
+            /*
             // Display the HTML web page
             client.println("<!DOCTYPE html><html>");
             client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
@@ -81,6 +81,7 @@ void loop(){
                
             
             client.println("</body></html>");
+            */
             
             // The HTTP response ends with another blank line
             client.println();
@@ -97,8 +98,8 @@ void loop(){
     // Clear the header variable
     header = "";
     // Close the connection
-    //client.stop();
-    //Serial.println("Client disconnected.");
+    client.stop();
+    Serial.println("Client disconnected.");
     Serial.println("");
   }
 }
