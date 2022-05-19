@@ -1,11 +1,16 @@
 # Bullseye Turning Target System
 
-**PCB & Schematics created in [EasyEDA](http://www.easyeda.com/editor)**
+## There are several versions / options to this.  
+Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on the App Store.  I'm working on testing a circuit board to manage a solenoid to complement this and make the targets turn.  That will be under the heading "ESP32Wifi"
+
+The next system has a Control System and complimenting remote devices:  Wireless Relay or Electronic Turning system.  Read about both below.
+
+**All PCB & Schematics created in [EasyEDA](http://www.easyeda.com/editor)**
 
 This is my design of a functioning turning target system for NRA 25 yard pistol shooting.  It's broken up into 3 groups:
 
-## Control-System
-This is the main controller.  When built, it has three momentary switches to activate Timed, Rapid and 1 second practice drills. Supplies needed:
+## Control-Sytem
+This is the main controller.  When built, it has three momentary switches to activate Timed, Rapid and 1 second practice drills. It needs a complimentary remote device (both options listed below).  Supplies needed for the controller:
 1. [Arduino Nano or clone](https://www.amazon.com/Deegoo-ATmega328P-Microcontroller-Board-Arduino/dp/B07R9VWD39/ref=sr_1_38?crid=Y0E1K3OLPBAQ&keywords=nano+clone&qid=1649986708&sprefix=nano+clone%2Caps%2C81&sr=8-38)
 2. 1k Resistor
 3. 10k PoT
