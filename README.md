@@ -5,7 +5,22 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 
 The next system has a Control System and complimenting remote devices:  Wireless Relay or Electronic Turning system.  Read about both below.
 
-**All PCB & Schematics created in [EasyEDA](http://www.easyeda.com/editor)**
+**All PCB & Schematics were created using [EasyEDA](http://www.easyeda.com/editor)**
+
+## ESP32Wifi
+Simplist design and usage.  The ESP32 will become it's own hotspot, broadcasting a SSID of Wifi.Target;  The system is controlled via Tom's app.
+
+Inside the folder for this option, you will find the PCB in Gerber format, along with the EasyEDA design. 
+
+Materials needed:
+1. 1k Reistor
+2. 10k Resistor
+3. 5mm LED
+4. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
+5. [NodeMCU-32s](https://www.amazon.com/Aokin-NodeMCU-32S-ESP-WROOM-32-Development-Microcontroller/dp/B09FM7XH89/ref=sr_1_4?crid=I9VQ0A2XGEY6&keywords=NOdeMCU-32s&qid=1653442442&sprefix=nodemcu-32%2Caps%2C139&sr=8-4&th=1)
+
+
+## If you do not want to pair via a phone, the next sections are for you!
 
 This is my design of a functioning turning target system for NRA 25 yard pistol shooting.  It's broken up into 3 groups:
 
