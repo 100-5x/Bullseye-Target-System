@@ -7,7 +7,7 @@ String header;
 
 // Auxiliar variables to store the current output state
 String activationPinState = "off";
-const int activationPin = 26;
+const int activationPin = 27;
 void setup() {
   Serial.begin(115200);
   pinMode(activationPin, OUTPUT);
@@ -48,12 +48,10 @@ void loop(){
             // turns the GPIOs on and off
             if (header.indexOf("GET /face") >= 0) {
               Serial.println("Targets should be facing");
-              //activationPinState = "on";
-              digitalWrite(activationPin, HIGH);
+              digitalWrite(activationPin, LOW);
             } else if (header.indexOf("GET /edge") >= 0) {
               Serial.println("Targets Edge facing");
-              //activationPinState = "off";
-              digitalWrite(activationPin, LOW);
+              digitalWrite(activationPin, HIGH);
             }
            
             
