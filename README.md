@@ -1,65 +1,21 @@
 # Bullseye Turning Target System
 
-## There are several versions / options to this.  
-Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on the App Store.  I'm working on testing a circuit board to manage a solenoid to complement this and make the targets turn.  That will be under the heading "ESP32Wifi"
 
-The next system has a Control System and complimenting remote devices:  Wireless Relay or Electronic Turning system.  Read about both below.
+Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on the App Store of your choice or [The Bullseye App](https://www.bullseyematch.app) website.  The following is a circuit board designedto compliment Tom's work:
+
 
 **All PCB & Schematics were created using [EasyEDA](http://www.easyeda.com/editor)**
 
-## ESP32Wifi
-Simplist design and usage.  The ESP32 will become it's own hotspot, broadcasting a SSID of Wifi.Target;  The system is controlled via Tom's app.
-
-Inside the folder for this option, you will find the PCB in Gerber format, along with the EasyEDA design. 
+Inside the folder, you will find the PCB in Gerber format, along with the EasyEDA design. 
 
 Materials needed:
-1. 1k Reistor
-2. 10k Resistor
-3. 5mm LED
+1. 10k Resistor
 4. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
-5. [NodeMCU-32s](https://www.amazon.com/Aokin-NodeMCU-32S-ESP-WROOM-32-Development-Microcontroller/dp/B09FM7XH89/ref=sr_1_4?crid=I9VQ0A2XGEY6&keywords=NOdeMCU-32s&qid=1653442442&sprefix=nodemcu-32%2Caps%2C139&sr=8-4&th=1)
+5. [Geekcreit® NodeMcu Lua ESP8266 ESP-12F WIFI Development Board](https://www.banggood.com/Geekcreit-NodeMcu-Lua-ESP8266-ESP-12F-WIFI-Development-Board-p-985891.html)
+3. IRFZ44N MOSFET
+4. 2 & 3 hole terminal blocks
 
 
-## If you do not want to pair via a phone, the next sections are for you!
-
-This is my design of a functioning turning target system for NRA 25 yard pistol shooting.  It's broken up into 3 groups:
-
-## Control-Sytem
-This is the main controller.  When built, it has three momentary switches to activate Timed, Rapid and 1 second practice drills. It needs a complimentary remote device (both options listed below).  Supplies needed for the controller:
-1. [Arduino Nano or clone](https://www.amazon.com/Deegoo-ATmega328P-Microcontroller-Board-Arduino/dp/B07R9VWD39/ref=sr_1_38?crid=Y0E1K3OLPBAQ&keywords=nano+clone&qid=1649986708&sprefix=nano+clone%2Caps%2C81&sr=8-38)
-2. 1k Resistor
-3. 10k PoT
-4. (4) 2-pole Screw Terminals
-5. [DFPlayer DFMini Module](https://www.amazon.com/DFPlayer-Controlled-Through-Arduino-Raspberry/dp/B09GPCCXT8/ref=sr_1_1_sspa?crid=1XVHF6SDF7TIW&keywords=dfplayer+mini&qid=1649339688&sprefix=DFPlayer%2Caps%2C241&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyRVpINDFZWElaMlNLJmVuY3J5cHRlZElkPUEwMjM2NTk1MTdGRVlITDg3UlNKQSZlbmNyeXB0ZWRBZElkPUEwOTUyNDM5MjRJNEsxNFkzMlY5NCZ3aWRnZXROYW1lPXNwX2F0ZiZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=)
-6. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
-7. [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-8. [PAM8403 Class D Amplifier Board](https://www.ebay.com/itm/234403673263)
-9. 2 x [4ohm 3w speaker](https://www.amazon.com/Gikfun-Speaker-Stereo-Loudspeaker-Arduino/dp/B01LN8ONG4/ref=sr_1_1_sspa?crid=XZ93E4ER4P4C&keywords=4+ohm+3+watt+speaker&qid=1649986632&sprefix=4ohm+3%2Caps%2C203&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzTkhYR1NZSTVaUEFGJmVuY3J5cHRlZElkPUEwMzM2NTQySzNUMTVXMjZaN1dMJmVuY3J5cHRlZEFkSWQ9QTAyODE0NjFZUlBQRDNFWFhGQVQmd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
-10. 3 Momentary Switches / Buttons
-11. MicroSD Card
-
-#### Sound
-I downloaded the sound files from the following [Location](https://www.bullseyepistol.com/rangecmd.htm)
-
-### Control System usaage
-After soldering in the components, you can supply a recommended 12v to the board, and use the 10k PoT to adjust the transmit power to the wireless transmitter.
-
-## Wireless Relay
-A simple MOSFET relay system to activate a solenoid to control the target turn.  Items required:
-1. [MOSFET XY-MOS relay](https://www.amazon.com/High-Power-Trigger-Adjustment-Electronic-Brightness/dp/B0893MKNB2/ref=sr_1_5?crid=263H5VLQTNTTE&keywords=XY-MOS+MOSFET&qid=1649339921&sprefix=xy-mos+mosfet%2Caps%2C94&sr=8-5)
-2. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
-3. [Wireless Transmitter](https://www.amazon.com/dp/B08YMYWFN4?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-
-* Pin Out Correlations:
-  XMTR -> RCVR. 
-  
-  1 -> D2. 
-  
-  2 -> D3. 
-  
-  3 -> D1. 
-  
-  4 -> D0. 
   
 
 ## Electric Turning System
