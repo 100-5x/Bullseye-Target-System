@@ -1,14 +1,12 @@
  // started with excellent tutorial found here:
  // https://randomnerdtutorials.com/esp32-access-point-ap-web-server/
 #include <WiFi.h>
-
 #include <AccelStepper.h>
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
 // DIR- && PUL- to GND
 #define dirPin 5 // DIR+
 #define stepPin 7 // PUL+
-#define sigPin 9 //From wireless receiver
 #define motorInterfaceType 1
 
 // Create a new instance of the AccelStepper class:
@@ -19,12 +17,11 @@ WiFiServer server(80);
 String header;
 
 // Auxiliar variables to store the current output state
-String activationPinState = "off";
+//String activationPinState = "off";
 const int activationPin = 26;
 void setup() {
   stepper.setMaxSpeed(2000);
   stepper.setAcceleration(700);
-  pinMode(sigPin, INPUT); 
   Serial.begin(115200);
   pinMode(activationPin, OUTPUT);
   digitalWrite(activationPin, LOW);
@@ -65,8 +62,10 @@ void loop(){
             if (header.indexOf("GET /face") >= 0) {
               Serial.println("Targets should be facing");
               stepper.moveTo(90);
+              digitalWrite(activationPin, LOW);
             } else if (header.indexOf("GET /edge") >= 0) {
               Serial.println("Targets Edge facing");
+              digitalWrite(activationPin, HIGH);
               stepper.moveTo(0);
             }
            stepper.runToPosition();
