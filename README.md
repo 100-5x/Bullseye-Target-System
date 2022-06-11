@@ -6,7 +6,17 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 
 **All PCB & Schematics were created using [EasyEDA](http://www.easyeda.com/editor)**
 
-Inside the folder, you will find the [PCB](https://github.com/100-5x/Bullseye-Target-System/blob/main/Gerber_PCB_Electric%20Target_2022-06-11.zip) in Gerber format, along with the EasyEDA design. The [ESP32F code](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32f/esp32f.ino) will need uploaded via the Arduino IDE.
+## Files
+[Gerber file](https://github.com/100-5x/Bullseye-Target-System/blob/main/Gerber_PCB_Electric%20Target_2022-06-11.zip)
+
+[Design PCB](https://github.com/100-5x/Bullseye-Target-System/blob/main/PCB_PCB_Electric%20Target_2022-06-11.pdf)
+
+[Schematic](https://github.com/100-5x/Bullseye-Target-System/blob/main/Schematic_Electric%20Target_2022-06-11.pdf)
+
+[EasyEDA JSON file for modifications](https://github.com/100-5x/Bullseye-Target-System/blob/main/SCH_Electric%20Target_2022-06-11.json)
+
+
+The [ESP32F code](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32f/esp32f.ino) will need uploaded via the Arduino IDE.
 
 Materials needed:
 1. 10k Resistor
@@ -39,3 +49,4 @@ I wanted this to be as configurable as possible, so I added in a 3P Terminal blo
               stepper.moveTo(0);
             }
 ```
+
