@@ -1,7 +1,28 @@
+/*
+#include <ArduinoWiFiServer.h>
+#include <BearSSLHelpers.h>
+#include <CertStoreBearSSL.h>
+#include <ESP8266WiFiAP.h>
+#include <ESP8266WiFiGeneric.h>
+#include <ESP8266WiFiGratuitous.h>
+#include <ESP8266WiFiMulti.h>
+#include <ESP8266WiFiSTA.h>
+#include <ESP8266WiFiScan.h>
+#include <ESP8266WiFiType.h>
+#include <WiFiClient.h>
+#include <WiFiClientSecure.h>
+#include <WiFiClientSecureBearSSL.h> 
+#include <WiFiServer.h>
+#include <WiFiServerSecure.h>
+#include <WiFiServerSecureBearSSL.h>
+#include <WiFiUdp.h>
+*/
+
  // started with excellent tutorial found here:
  // https://randomnerdtutorials.com/esp32-access-point-ap-web-server/
-#include <WiFi.h>
+//#include <WiFi.h>
 #include <AccelStepper.h>
+#include <ESP8266WiFi.h>
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
 // DIR- && PUL- to GND
@@ -18,7 +39,8 @@ String header;
 
 // Auxiliar variables to store the current output state
 //String activationPinState = "off";
-const int activationPin = 26;
+const int activationPin = 12;
+const int ledPin = 11;
 void setup() {
   stepper.setMaxSpeed(2000);
   stepper.setAcceleration(700);
@@ -63,9 +85,11 @@ void loop(){
               Serial.println("Targets should be facing");
               stepper.moveTo(90);
               digitalWrite(activationPin, LOW);
+              digitalWrite(ledPin, LOW);
             } else if (header.indexOf("GET /edge") >= 0) {
               Serial.println("Targets Edge facing");
               digitalWrite(activationPin, HIGH);
+              digitalWrite(ledPin, HIGH);
               stepper.moveTo(0);
             }
            stepper.runToPosition();
