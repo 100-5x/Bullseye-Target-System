@@ -119,7 +119,8 @@
         "use_height_for_length_calcs": true
       },
       "track_widths": [
-        0.0
+        0.0,
+        0.75
       ],
       "via_dimensions": [
         {
@@ -346,7 +347,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "ESP32.kicad_pro",
+    "filename": "8266.kicad_pro",
     "version": 1
   },
   "net_settings": {
