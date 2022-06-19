@@ -8,10 +8,10 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 
 ## Files
 
-[EasyEDA JSON file for modifications](https://github.com/100-5x/Bullseye-Target-System/blob/main/SCH_Electric%20Target_2022-06-11.json)
+[EasyEDA JSON file for modifications](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32/SCH_Bullseye%20ESP32_2022-06-18.json)
 
 
-The [ESP32F code](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32f/esp32f.ino) will need uploaded via the Arduino IDE.
+The [ESP32 code](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32/esp32.ino) will need uploaded via the Arduino IDE.
 
 Materials needed:
 1. 10k Resistor
