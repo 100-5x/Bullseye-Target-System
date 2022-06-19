@@ -7,11 +7,6 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 **All PCB & Schematics were created using [EasyEDA](http://www.easyeda.com/editor)**
 
 ## Files
-[Gerber file](https://github.com/100-5x/Bullseye-Target-System/blob/main/Gerber_PCB_Electric%20Target_2022-06-11.zip)
-
-[Design PCB](https://github.com/100-5x/Bullseye-Target-System/blob/main/PCB_PCB_Electric%20Target_2022-06-11.pdf)
-
-[Schematic](https://github.com/100-5x/Bullseye-Target-System/blob/main/Schematic_Electric%20Target_2022-06-11.pdf)
 
 [EasyEDA JSON file for modifications](https://github.com/100-5x/Bullseye-Target-System/blob/main/SCH_Electric%20Target_2022-06-11.json)
 
