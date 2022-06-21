@@ -7,7 +7,7 @@ String header;
 
 // Auxiliar variables to store the current output state
 String activationPinState = "off";
-const int activationPin = 26;
+const int activationPin = 27;
 void setup() {
   Serial.begin(115200);
   pinMode(activationPin, OUTPUT);
