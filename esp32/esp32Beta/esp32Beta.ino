@@ -1,9 +1,11 @@
 
 #include <AccelStepper.h>
+/*
 #include <ESP8266WiFi.h>
-#include <WiFiClient.h>
-#include <ESP8266WebServer.h>
+#include <WiFiClient.h*/
+#include <WebServer.h>
 
+#include <WiFi.h>
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
 // DIR- && PUL- to GND
@@ -17,7 +19,7 @@ const char* ssid = "target.Wifi";
 AccelStepper stepper = AccelStepper(motorInterfaceType, stepPin, dirPin);
 
 String header;
-ESP8266WebServer server(80); //Server on port 80
+WebServer server(80); //Server on port 80
 
 
 // Auxiliar variables to store the current output state
