@@ -7,7 +7,7 @@ String header;
 
 // Auxiliar variables to store the current output state
 String activationPinState = "off";
-const int activationPin = 26;
+const int activationPin = 27;
 void setup() {
   Serial.begin(115200);
   pinMode(activationPin, OUTPUT);
@@ -24,7 +24,7 @@ void setup() {
 }
 
 void loop(){
-  WiFiClient client = server.available();   // Listen for incoming clients
+  WiFiClient client = server.accept();   // Listen for incoming clients
 
   if (client) {                             // If a new client connects,
     Serial.println("New Client.");          // print a message out in the serial port

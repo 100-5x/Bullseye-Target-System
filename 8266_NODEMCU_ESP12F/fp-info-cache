@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 20112010167802237
 8266
 NodeMCU 8266 LUA 12-F
@@ -6,6 +7,9 @@ NodeMCU 8266 LUA 12-F
 0
 30
 30
+=======
+20672392358189383
+>>>>>>> 559f7490a03dedacb0e9c037479dcd6cd97b6cd2
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
