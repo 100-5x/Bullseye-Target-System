@@ -7,8 +7,10 @@
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
 // DIR- && PUL- to GND
-#define dirPin 2 // DIR+
-#define stepPin 3 // PUL+
+#define dirPin 5 // DIR+
+#define stepPin 4 // PUL+
+const int activationPin = 14;
+
 #define motorInterfaceType 1
 
 const char* ssid = "target.Wifi";
@@ -20,11 +22,6 @@ String header;
 ESP8266WebServer server(80); //Server on port 80
 
 
-// Auxiliar variables to store the current output state
-//String activationPinState = "off";
-const int activationPin = 12;
-const int ledPin = 11;
-
 //----------------
 //---------------- SETUP
 //----------------
@@ -33,6 +30,7 @@ void setup() {
   stepper.setAcceleration(700);
   Serial.begin(115200);
   pinMode(activationPin, OUTPUT);
+  pinMode(BUILTIN_LED, OUTPUT);
   digitalWrite(activationPin, LOW);
   Serial.print("Setting AP (Access Point)…");
   // Remove the password parameter, if you want the AP (Access Point) to be open
@@ -58,16 +56,19 @@ void handleRoot() {
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   Serial.println("Edged...");
+  
   digitalWrite(activationPin, HIGH);
-  digitalWrite(ledPin, HIGH);
   stepper.moveTo(0);
   stepper.runToPosition();
+  digitalWrite(BUILTIN_LED, LOW);
 }
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
   Serial.println("Faced...");
+  
   stepper.moveTo(90);
   digitalWrite(activationPin, LOW);
   stepper.runToPosition();
+  digitalWrite(BUILTIN_LED, HIGH);
   
 }

@@ -1,10 +1,6 @@
 
 #include <AccelStepper.h>
-/*
-#include <ESP8266WiFi.h>
-#include <WiFiClient.h*/
 #include <WebServer.h>
-
 #include <WiFi.h>
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
@@ -27,15 +23,20 @@ WebServer server(80); //Server on port 80
 const int activationPin = 12;
 const int ledPin = 11;
 
-//----------------
-//---------------- SETUP
-//----------------
+//---------------------------------------//
+//---------------- SETUP ----------------//
+//---------------------------------------//
+
 void setup() {
+  // Accel Stepper Variables
   stepper.setMaxSpeed(2000);
   stepper.setAcceleration(700);
   Serial.begin(115200);
+
   pinMode(activationPin, OUTPUT);
   digitalWrite(activationPin, LOW);
+
+  // Set up Wifi
   Serial.print("Setting AP (Access Point)…");
   // Remove the password parameter, if you want the AP (Access Point) to be open
   WiFi.mode(WIFI_AP);
