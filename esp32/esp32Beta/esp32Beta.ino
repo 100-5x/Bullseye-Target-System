@@ -38,7 +38,6 @@ void setup() {
 
   // Set up Wifi
   Serial.print("Setting AP (Access Point)…");
-  // Remove the password parameter, if you want the AP (Access Point) to be open
   WiFi.mode(WIFI_AP);
   WiFi.softAP("target.Wifi");
   WiFi.softAP(ssid);
