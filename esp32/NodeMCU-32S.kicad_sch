@@ -1407,6 +1407,23 @@
     (pin "3" (uuid c0e9300b-1c6d-455e-ab8c-9c8f77cafd69))
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 232.41 35.56 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 5a59c885-5ba9-4a18-9885-fbc96b71fc5c)
+    (property "Reference" "H4" (id 0) (at 234.95 34.2899 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 234.95 36.8299 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (id 2) (at 232.41 35.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 232.41 35.56 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "Connector:Screw_Terminal_01x03") (at 149.86 36.83 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 6982722a-cf78-48a8-9760-9f79c938704a)
@@ -1782,6 +1799,9 @@
     )
     (path "/8b338a1a-27a6-4b2f-9828-da95f534b845"
       (reference "H3") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_3.2mm_M3")
+    )
+    (path "/5a59c885-5ba9-4a18-9885-fbc96b71fc5c"
+      (reference "H4") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_3.2mm_M3")
     )
     (path "/cf970825-c949-4581-abbc-10bd58d97e15"
       (reference "J1") (unit 1) (value "Screw_Terminal_01x02") (footprint "TerminalBlock:TerminalBlock_bornier-2_P5.08mm")
