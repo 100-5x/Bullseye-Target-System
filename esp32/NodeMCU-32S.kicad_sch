@@ -4,6 +4,14 @@
 
   (paper "A4")
 
+  (title_block
+    (title "ESP32 Turning Target System")
+    (date "2022-06-23")
+    (rev "3")
+    (company "Scott Dial")
+    (comment 1 "Use in conjunction with Bullseye Match from the App Store.")
+  )
+
   (lib_symbols
     (symbol "Connector:Screw_Terminal_01x02" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
       (property "Reference" "J" (id 0) (at 0 2.54 0)
