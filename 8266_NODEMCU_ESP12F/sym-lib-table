@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "esp8266")(type "KiCad")(uri "${KIPRJMOD}/nodemcu_esp8266_lua_12-f.kicad_sym")(options "")(descr ""))
-)

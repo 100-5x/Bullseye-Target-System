@@ -1,77 +1,96 @@
- // started with excellent tutorial found here:
- // https://randomnerdtutorials.com/esp32-access-point-ap-web-server/
+
+#include <AccelStepper.h>
+#include <WebServer.h>
 #include <WiFi.h>
-const char* ssid     = "target.Wifi";
-WiFiServer server(80);
+
+// Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
+// DIR- && PUL- to GND
+#define dirPin 18 // DIR+
+#define stepPin 19 // PUL+
+#define motorInterfaceType 1
+
+const char* ssid = "target.Wifi";
+
+// Create a new instance of the AccelStepper class:
+AccelStepper stepper = AccelStepper(motorInterfaceType, stepPin, dirPin);
+
 String header;
+WebServer server(80); //Server on port 80
+
 
 // Auxiliar variables to store the current output state
-String activationPinState = "off";
-const int activationPin = 27;
+//String activationPinState = "off";
+const int trimPot = 34;
+const int activationPin = 23;
+const int ledPin = 2;
+
+int edgePos = 90;
+
+//---------------------------------------//
+//---------------- SETUP ----------------//
+//---------------------------------------//
+
 void setup() {
+  // Accel Stepper Variables
+  stepper.setMaxSpeed(2000);
+  stepper.setAcceleration(700); 
   Serial.begin(115200);
+
   pinMode(activationPin, OUTPUT);
   digitalWrite(activationPin, LOW);
-  Serial.print("Setting AP (Access Point)…");
-  // Remove the password parameter, if you want the AP (Access Point) to be open
-  WiFi.softAP(ssid);//, password);
 
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin,LOW);
+
+  pinMode(trimPot, INPUT);
+  
+  
+
+  // Set up Wifi
+  Serial.print("Setting AP (Access Point)…");
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP("target.Wifi");
+  WiFi.softAP(ssid);
   IPAddress IP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
+  server.on("/edge", targetEdge);      //Which routine to handle at edge location
+  server.on("/face", targetFace);      //Which routine to handle at face location
+  server.on("/", handleRoot);      //Which routine to handle at root location
   Serial.println(IP);
-  
-  server.begin();
+  server.begin();                  //Start server
+  Serial.println("HTTP server started");
 }
 
 void loop(){
-  WiFiClient client = server.accept();   // Listen for incoming clients
+  server.handleClient();          //Handle client requests
+  
+  int analogValue = analogRead(trimPot);
+  // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  int angle = map(analogValue, 0, 4096,-20,20);
+  //Serial.println(voltage);
+  edgePos = (90 + angle);
+  Serial.println(edgePos);
+  delay(500);
+}
+void handleRoot() {
+  server.send(200, "text/plain", "Target system requires http://192.168.4.1/face or http://192.168.4.1/edge");
+}
+void targetEdge() {
+  server.send(200, "text/plain", "Targets Edged");
+  Serial.println("Edged...");
+  digitalWrite(activationPin, HIGH);
+  digitalWrite(ledPin, HIGH);
+  stepper.moveTo(edgePos);
+  stepper.runToPosition();
+}
+void targetFace() {
+  server.send(200, "text/plain", "Targets Faced");
+  Serial.println("Faced...");
+  
+  digitalWrite(activationPin, LOW);
+  digitalWrite(ledPin, LOW);
+  stepper.moveTo(0);
+  stepper.runToPosition();
 
-  if (client) {                             // If a new client connects,
-    Serial.println("New Client.");          // print a message out in the serial port
-    String currentLine = "";                // make a String to hold incoming data from the client
-    while (client.connected()) {            // loop while the client's connected
-      if (client.available()) {             // if there's bytes to read from the client,
-        char c = client.read();             // read a byte, then
-        Serial.write(c);                    // print it out the serial monitor
-        header += c;
-        if (c == '\n') {                    // if the byte is a newline character
-          // if the current line is blank, you got two newline characters in a row.
-          // that's the end of the client HTTP request, so send a response:
-          if (currentLine.length() == 0) {
-            // HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
-            // and a content-type so the client knows what's coming, then a blank line:
-            client.println("HTTP/1.1 200 OK");
-            client.println("Content-type:text/html");
-            client.println("Connection: close");
-            client.println();
-            
-            // turns the GPIOs on and off
-            if (header.indexOf("GET /face") >= 0) {
-              Serial.println("Targets should be facing");
-              digitalWrite(activationPin, LOW);
-            } else if (header.indexOf("GET /edge") >= 0) {
-              Serial.println("Targets Edge facing");
-              digitalWrite(activationPin, HIGH);
-            }
-           
-            
-            // The HTTP response ends with another blank line
-            client.println();
-            // Break out of the while loop
-            break;
-          } else { // if you got a newline, then clear currentLine
-            currentLine = "";
-          }
-        } else if (c != '\r') {  // if you got anything else but a carriage return character,
-          currentLine += c;      // add it to the end of the currentLine
-        }
-      }
-    }
-    // Clear the header variable
-    header = "";
-    // Close the connection
-    client.stop();
-    Serial.println("Client disconnected.");
-    Serial.println("");
-  }
+  
 }

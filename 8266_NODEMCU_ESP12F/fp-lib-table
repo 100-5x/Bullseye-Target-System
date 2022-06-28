@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "8266")(type "KiCad")(uri "/home/sdial/Documents/GitHub/Bullseye-Target-System/8266_NODEMCU_ESP12F")(options "")(descr ""))
-)
