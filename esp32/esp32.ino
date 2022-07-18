@@ -80,7 +80,7 @@ void targetEdge() {
   Serial.println("Edged...");
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, HIGH);
-  stepper.moveTo(edgePos);
+  stepper.moveTo(-edgePos);
   stepper.runToPosition();
 }
 void targetFace() {
