@@ -1132,7 +1132,7 @@
     (property "Value" "R_Potentiometer_Trim_US" (id 1) (at 85.09 102.8699 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Potentiometer_THT:Potentiometer_Runtron_RM-065_Vertical" (id 2) (at 87.63 101.6 0)
+    (property "Footprint" "Potentiometer_THT:Potentiometer_Vishay_T73YP_Vertical" (id 2) (at 87.63 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 87.63 101.6 0)
@@ -1628,7 +1628,7 @@
     (uuid e43aa29c-427c-47ef-9d4b-7a062511150f)
     (property "Reference" "R1" (id 0) (at 223.52 118.11 90))
     (property "Value" "10k" (id 1) (at 223.52 120.65 90))
-    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P5.08mm_Vertical" (id 2) (at 223.52 124.46 0)
+    (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" (id 2) (at 223.52 124.46 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 223.52 124.46 0)
@@ -1719,10 +1719,10 @@
       (reference "Q1") (unit 1) (value "IRLZ44N") (footprint "Package_TO_SOT_THT:TO-220-3_Vertical")
     )
     (path "/e43aa29c-427c-47ef-9d4b-7a062511150f"
-      (reference "R1") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P5.08mm_Vertical")
+      (reference "R1") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
     )
     (path "/02376529-a7f0-4ee0-82d0-c26b2b59531d"
-      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Runtron_RM-065_Vertical")
+      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Vishay_T73YP_Vertical")
     )
     (path "/a33b0590-e65d-4f1d-beac-6b435deb1220"
       (reference "U1") (unit 1) (value "ESP32-DevKitC") (footprint "ESP32_modules:NodeMCU-32S")
