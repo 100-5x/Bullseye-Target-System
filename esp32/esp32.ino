@@ -32,8 +32,9 @@ int edgePos = 90;
 
 void setup() {
   // Accel Stepper Variables
-  stepper.setMaxSpeed(2000);
-  stepper.setAcceleration(700); 
+  //stepper.setMaxSpeed(1000);
+  
+  stepper.setCurrentPosition(0);
   Serial.begin(115200);
 
   pinMode(activationPin, OUTPUT);
@@ -68,8 +69,8 @@ void loop(){
   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   int angle = map(analogValue, 0, 4096,-20,20);
   //Serial.println(voltage);
-  edgePos = (90 + angle);
-  Serial.println(edgePos);
+  edgePos = -1*(90 + angle);
+  
   delay(500);
 }
 void handleRoot() {
@@ -80,7 +81,10 @@ void targetEdge() {
   Serial.println("Edged...");
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, HIGH);
-  stepper.moveTo(-edgePos);
+  Serial.println(edgePos);
+  stepper.setAcceleration(80); 
+  //stepper.setSpeed(500);
+  stepper.moveTo(edgePos);
   stepper.runToPosition();
 }
 void targetFace() {
@@ -89,7 +93,12 @@ void targetFace() {
   
   digitalWrite(activationPin, LOW);
   digitalWrite(ledPin, LOW);
-  stepper.moveTo(0);
+  Serial.println(0);
+  edgePos = -1*edgePos; //double negative = positive 
+  Serial.println(edgePos);
+  stepper.setAcceleration(80); 
+  //stepper.setSpeed(500);
+  stepper.moveTo(edgePos);
   stepper.runToPosition();
 
   
