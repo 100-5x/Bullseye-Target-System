@@ -1,5 +1,5 @@
 
-#include <AccelStepper.h>
+#include <SpeedyStepper.h>
 #include <WebServer.h>
 #include <WiFi.h>
 
@@ -11,8 +11,8 @@
 
 const char* ssid = "target.Wifi";
 
-// Create a new instance of the AccelStepper class:
-AccelStepper stepper = AccelStepper(motorInterfaceType, stepPin, dirPin);
+// Create a new instance of the Stepper class:
+SpeedyStepper stepper;
 
 String header;
 WebServer server(80); //Server on port 80
@@ -33,8 +33,8 @@ int edgePos = 90;
 void setup() {
   // Accel Stepper Variables
   //stepper.setMaxSpeed(1000);
+  stepper.connectToPins(stepPin, dirPin);
   
-  stepper.setCurrentPosition(0);
   Serial.begin(115200);
 
   pinMode(activationPin, OUTPUT);
@@ -68,7 +68,8 @@ void setup() {
 
 void loop(){
   server.handleClient();          //Handle client requests
-  
+  stepper.setSpeedInStepsPerSecond(100);
+  stepper.setAccelerationInStepsPerSecondPerSecond(100);
 
   
   delay(500);
@@ -82,10 +83,8 @@ void targetEdge() {
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, LOW);
   Serial.println(edgePos);
-  stepper.setAcceleration(1000); 
-  //stepper.setSpeed(500);
-  stepper.moveTo(50);
-  stepper.runToPosition();
+  stepper.moveToPositionInSteps(50);
+ 
 }
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
@@ -96,10 +95,6 @@ void targetFace() {
   Serial.println(0);
   edgePos = -1*edgePos; //double negative = positive 
   Serial.println(edgePos);
-  stepper.setAcceleration(1000); 
-  //stepper.setSpeed(500);
-  stepper.moveTo(0);
-  stepper.runToPosition();
-
+  stepper.moveToPositionInSteps(0);
   
 }
