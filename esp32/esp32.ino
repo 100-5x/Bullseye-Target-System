@@ -45,6 +45,10 @@ void setup() {
 
   pinMode(trimPot, INPUT);
   
+  int analogValue = analogRead(trimPot);
+  // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  int angle = map(analogValue, 0, 4096,40,100);
+  //Serial.println(voltage);
   
 
   // Set up Wifi
@@ -65,11 +69,7 @@ void setup() {
 void loop(){
   server.handleClient();          //Handle client requests
   
-  int analogValue = analogRead(trimPot);
-  // Rescale to potentiometer's voltage (from 0V to 3.3V):
-  int angle = map(analogValue, 0, 4096,-20,20);
-  //Serial.println(voltage);
-  edgePos = -1*(90 + angle);
+
   
   delay(500);
 }
@@ -80,11 +80,11 @@ void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   Serial.println("Edged...");
   digitalWrite(activationPin, HIGH);
-  digitalWrite(ledPin, HIGH);
+  digitalWrite(ledPin, LOW);
   Serial.println(edgePos);
-  stepper.setAcceleration(80); 
+  stepper.setAcceleration(1000); 
   //stepper.setSpeed(500);
-  stepper.moveTo(edgePos);
+  stepper.moveTo(50);
   stepper.runToPosition();
 }
 void targetFace() {
@@ -96,9 +96,9 @@ void targetFace() {
   Serial.println(0);
   edgePos = -1*edgePos; //double negative = positive 
   Serial.println(edgePos);
-  stepper.setAcceleration(80); 
+  stepper.setAcceleration(1000); 
   //stepper.setSpeed(500);
-  stepper.moveTo(edgePos);
+  stepper.moveTo(0);
   stepper.runToPosition();
 
   
