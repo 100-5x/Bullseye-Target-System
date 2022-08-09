@@ -1,3 +1,12 @@
+//#define __DEBUG__
+
+#ifdef __DEBUG__
+   #define print(...)   Serial.print(__VA_ARGS__)
+   #define println(...) Serial.println(__VA_ARGS__)
+#else
+   #define print(...)
+   #define println(...)
+#endif
 
 #include <SpeedyStepper.h>
 #include <WebServer.h>
@@ -34,8 +43,10 @@ void setup() {
   // Accel Stepper Variables
   //stepper.setMaxSpeed(1000);
   stepper.connectToPins(stepPin, dirPin);
-  
+
+#ifdef __DEBUG__
   Serial.begin(115200);
+#endif
 
   pinMode(activationPin, OUTPUT);
   digitalWrite(activationPin, LOW);
@@ -52,18 +63,25 @@ void setup() {
   
 
   // Set up Wifi
+#ifdef __DEBUG__
   Serial.print("Setting AP (Access Point)…");
+#endif
   WiFi.mode(WIFI_AP);
   WiFi.softAP("target.Wifi");
   WiFi.softAP(ssid);
   IPAddress IP = WiFi.softAPIP();
-  Serial.print("AP IP address: ");
   server.on("/edge", targetEdge);      //Which routine to handle at edge location
   server.on("/face", targetFace);      //Which routine to handle at face location
   server.on("/", handleRoot);      //Which routine to handle at root location
+#ifdef __DEBUG__
+  Serial.print("AP IP address: ");
   Serial.println(IP);
+#endif
   server.begin();                  //Start server
+
+#ifdef __DEBUG__
   Serial.println("HTTP server started");
+#endif
 }
 
 void loop(){
@@ -79,22 +97,26 @@ void handleRoot() {
 }
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
-  Serial.println("Edged...");
+ 
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, LOW);
+#ifdef __DEBUG__
+   Serial.println("Edged...");
   Serial.println(edgePos);
+#endif
   stepper.moveToPositionInSteps(50);
  
 }
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
-  Serial.println("Faced...");
+
   
   digitalWrite(activationPin, LOW);
   digitalWrite(ledPin, LOW);
+#ifdef __DEBUG__
+  Serial.println("Faced...");
   Serial.println(0);
-  edgePos = -1*edgePos; //double negative = positive 
-  Serial.println(edgePos);
+#endif
   stepper.moveToPositionInSteps(0);
   
 }
