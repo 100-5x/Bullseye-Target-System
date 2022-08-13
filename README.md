@@ -11,13 +11,15 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 The [ESP32 code](https://github.com/100-5x/Bullseye-Target-System/blob/main/esp32/esp32.ino) will need uploaded via the Arduino IDE.
 
 Materials needed:
-1. 10k Resistor
-2. 1k trim pot
+1. 10k Resistor (R1)
+2. 1k trim pot (RV1)
 4. [DC-DC Buck Converter](https://www.amazon.com/dp/B077TC3812?ref=ppx_yo2ov_dt_b_product_details&th=1)
 5. [NodeMCU-32s esp32 board](https://www.amazon.com/dp/B09FM7XH89?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-3. IRFZ44N MOSFET
+3. IRFZ44N MOSFET (Q1)
 4. (4) 2P terminal blocks
 5. (1) 3P terminal block
+6. 470mu 16v Cap (C1)
+7. 470mu 50v cap (C2)
 
 
 Total material cost should be <$25 for basic use.
