@@ -82,12 +82,13 @@ void setup() {
   println("HTTP server started");
 #endif
   delay(500);
-  stepper.connectToPins(stepPin, dirPin);
+   stepper.connectToPins(stepPin, dirPin);
    stepper.setAccelerationInStepsPerSecondPerSecond(400);
+   stepper.setSpeedInStepsPerSecond(400);
 }
 
 void loop(){
-  server.handleClient();          //Handle client requests  stepper.setSpeedInStepsPerSecond(200);
+  server.handleClient();          //Handle client requests  s
  
   delay(100);
 }
