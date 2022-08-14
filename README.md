@@ -19,7 +19,7 @@ Materials needed:
 4. (4) 2P terminal blocks
 5. (1) 3P terminal block
 6. 470mu 16v Cap (C1)
-7. 470mu 50v cap (C2)
+
 
 
 Total material cost should be <$25 for basic use.
