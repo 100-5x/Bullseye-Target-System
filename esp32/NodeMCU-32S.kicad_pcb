@@ -751,7 +751,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tedit 56D1B4CB) (tstamp 40bfb8f5-0f4e-4420-8d7a-ac83cfde4e84)
-    (at 66.04 50.8)
+    (at 63.2714 50.673)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "NodeMCU-32S.kicad_sch")
@@ -1263,7 +1263,7 @@
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
     (tedit 56D1B4CB) (tstamp c67bea5c-f799-4e70-aadc-e7ff57d36e5c)
-    (at 66.04 111.76)
+    (at 63.7794 111.3536)
     (descr "Mounting Hole 3.2mm, no annular, M3")
     (tags "mounting hole 3.2mm no annular m3")
     (property "Sheetfile" "NodeMCU-32S.kicad_sch")
