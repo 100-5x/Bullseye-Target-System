@@ -83,8 +83,8 @@ void setup() {
 #endif
   delay(500);
    stepper.connectToPins(stepPin, dirPin);
-   stepper.setAccelerationInStepsPerSecondPerSecond(400);
-   stepper.setSpeedInStepsPerSecond(400);
+   stepper.setAccelerationInStepsPerSecondPerSecond(800);
+   stepper.setSpeedInStepsPerSecond(800);
 }
 
 void loop(){
