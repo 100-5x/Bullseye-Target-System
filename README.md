@@ -28,7 +28,7 @@ All the modes below will work simultaneously.
   
 
 ## Basic Use
-There are a few simple points.  First is power input.  7-24v input is acceptable.  The easiset setup would be to use a solenoid with a pneumatic actuator, as it generally has "automatic return."  It also helps that air pressure can adjust the travel speed.  Simply hook up INPUT Power, and the solenoid to OUTPUT PWR.  When the device receives the commands from the BusllseyeMatch app, it will enable the OUTPUT PWR blocks and run your system. 
+There are a few simple points.  First is power input.  7-24v input is acceptable.  The easiset setup would be to use a solenoid with a pneumatic actuator, as it generally has "automatic return."  It also helps that air pressure can adjust the travel speed.  Simply hook up INPUT Power, and the solenoid to OUTPUT PWR.  When the device receives the commands from the BusllseyeMatch app, it will enable the OUTPUT PWR blocks and run your system.  The voltage in is the voltage out.  Beware!
 
 ## Stepper Motor Use
 You would need to use a stepper motor and a [stepper motor driver](https://www.amazon.com/dp/B08PKJG2ND?ref=ppx_yo2ov_dt_b_product_details&th=1).  I would recommend a NEMA23, but for a single target, with a light frame, a NEMA17 stepper motor might work.  You will need to supply constant power to both the board and the stepper motor driver at the same time.  You can use the trim pot to adjust the degree of turn +/- about 1/4 of a turn.
