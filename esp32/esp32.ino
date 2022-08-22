@@ -92,6 +92,13 @@ void loop(){
   int speed = map(analogValue, 0, 4096,400,1000);
   stepper.setAccelerationInStepsPerSecondPerSecond(speed);
   stepper.setSpeedInStepsPerSecond(speed);
+
+#ifdef __DEBUG__
+  print("Speed: ");
+  println(speed);
+  print("Direction: ");
+  println(moveSteps);
+#endif
   //Serial.println(voltage);
   delay(100);
 }

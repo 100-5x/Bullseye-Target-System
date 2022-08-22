@@ -1390,7 +1390,7 @@
   (symbol (lib_id "Switch:SW_SPST") (at 187.96 129.54 180) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 36411ff6-02f2-4518-91f8-2ec78503d07a)
-    (property "Reference" "SW?" (id 0) (at 187.96 124.46 0))
+    (property "Reference" "SW1" (id 0) (at 187.96 124.46 0))
     (property "Value" "SW_SPST" (id 1) (at 187.96 127 0))
     (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (id 2) (at 187.96 129.54 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -1793,7 +1793,7 @@
   (symbol (lib_id "power:+5V") (at 194.31 127 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid d5e38fca-598b-4d8a-98c9-6da71b070d70)
-    (property "Reference" "#PWR?" (id 0) (at 194.31 130.81 0)
+    (property "Reference" "#PWR0109" (id 0) (at 194.31 130.81 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 194.31 121.92 0))
@@ -1908,7 +1908,7 @@
       (reference "#PWR0108") (unit 1) (value "GND") (footprint "")
     )
     (path "/d5e38fca-598b-4d8a-98c9-6da71b070d70"
-      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR0109") (unit 1) (value "+5V") (footprint "")
     )
     (path "/414d8815-2cd5-4a60-a6c9-452c5087ded6"
       (reference "C1") (unit 1) (value "C_Polarized_Small_US") (footprint "Capacitor_THT:CP_Radial_D8.0mm_P3.80mm")
@@ -1950,7 +1950,7 @@
       (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Vishay_T73YP_Vertical")
     )
     (path "/36411ff6-02f2-4518-91f8-2ec78503d07a"
-      (reference "SW?") (unit 1) (value "SW_SPST") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
+      (reference "SW1") (unit 1) (value "SW_SPST") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
     )
     (path "/a33b0590-e65d-4f1d-beac-6b435deb1220"
       (reference "U1") (unit 1) (value "ESP32-DevKitC") (footprint "ESP32_modules:NodeMCU-32S")
