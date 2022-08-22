@@ -36,6 +36,7 @@ const int activationPin = 23;
 const int ledPin = 2;
 
 int edgePos = 90;
+int moveSteps = -200;
 
 //---------------------------------------//
 //---------------- SETUP ----------------//
@@ -49,17 +50,16 @@ void setup() {
 #endif
 
   pinMode(activationPin, OUTPUT);
+  pinMode(17, INPUT);
   digitalWrite(activationPin, LOW);
   delay(500); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
-
   pinMode(trimPot, INPUT);
+
+  if (digitalRead(17) == HIGH) { moveSteps = 200; }
   
-  //int analogValue = analogRead(trimPot);
-  // Rescale to potentiometer's voltage (from 0V to 3.3V):
-  //int angle = map(analogValue, 0, 4096,40,100);
-  //Serial.println(voltage);
+
   
 #ifdef __DEBUG__
   print("Setting AP (Access Point)…");
@@ -83,13 +83,16 @@ void setup() {
 #endif
   delay(500);
    stepper.connectToPins(stepPin, dirPin);
-   stepper.setAccelerationInStepsPerSecondPerSecond(800);
-   stepper.setSpeedInStepsPerSecond(800);
 }
 
 void loop(){
   server.handleClient();          //Handle client requests  s
- 
+  int analogValue = analogRead(trimPot);
+  // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  int speed = map(analogValue, 0, 4096,400,1000);
+  stepper.setAccelerationInStepsPerSecondPerSecond(speed);
+  stepper.setSpeedInStepsPerSecond(speed);
+  //Serial.println(voltage);
   delay(100);
 }
 void handleRoot() {
@@ -105,7 +108,7 @@ void targetEdge() {
   println("Edged...");
   println(edgePos);
 #endif
-  stepper.moveToPositionInSteps(-200);
+  stepper.moveToPositionInSteps(moveSteps);
  
 }
 void targetFace() {
