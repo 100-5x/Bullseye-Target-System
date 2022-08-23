@@ -1,4 +1,4 @@
-//#define __DEBUG__
+#define __DEBUG__
 
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
@@ -34,9 +34,14 @@ SpeedyStepper stepper;
 const int trimPot = 34;
 const int activationPin = 23;
 const int ledPin = 2;
+int speedy = 600;
+
+#define CW 1
+#define CCW -1
 
 int edgePos = 90;
-int moveSteps = -200;
+int moveSteps = 200;
+int Step = 0;
 
 //---------------------------------------//
 //---------------- SETUP ----------------//
@@ -57,7 +62,12 @@ void setup() {
   digitalWrite(ledPin,LOW);
   pinMode(trimPot, INPUT);
 
-  if (digitalRead(17) == HIGH) { moveSteps = 200; }
+  if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+
+#ifdef __DEBUG__
+  print("Move Steps: ");
+  println(moveSteps);
+#endif
   
 
   
@@ -89,13 +99,17 @@ void loop(){
   server.handleClient();          //Handle client requests  s
   int analogValue = analogRead(trimPot);
   // Rescale to potentiometer's voltage (from 0V to 3.3V):
-  int speed = map(analogValue, 0, 4096,400,1000);
-  stepper.setAccelerationInStepsPerSecondPerSecond(speed);
-  stepper.setSpeedInStepsPerSecond(speed);
+#ifdef __DEBUG__
+  print("Analog Value: ");
+  println(analogValue);
+#endif
+  speedy = map(analogValue, 0, 4096,400,2000);
+  stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
+  stepper.setSpeedInStepsPerSecond(speedy);
 
 #ifdef __DEBUG__
   print("Speed: ");
-  println(speed);
+  println(speedy);
   print("Direction: ");
   println(moveSteps);
 #endif
@@ -114,8 +128,10 @@ void targetEdge() {
 #ifdef __DEBUG__
   println("Edged...");
   println(edgePos);
+  print("Speed: ");
+  println(speedy);
 #endif
-  stepper.moveToPositionInSteps(moveSteps);
+  stepper.moveToPositionInSteps(Step);
  
 }
 void targetFace() {
@@ -125,6 +141,8 @@ void targetFace() {
 #ifdef __DEBUG__
   println("Faced...");
   println(0);
+  print("Speed: ");
+  println(speedy);
 #endif
   stepper.moveToPositionInSteps(0);
   
