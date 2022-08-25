@@ -1213,6 +1213,9 @@
   (gr_text "+" (at 111.6965 50.0507) (layer "F.SilkS") (tstamp f23ac723-a36d-491d-9473-7ec0ffed332d)
     (effects (font (size 1 1) (thickness 0.15)))
   )
+  (gr_text "Low Level Trigger" (at 115.697 112.8522) (layer "F.SilkS") (tstamp ffb1867c-42fd-4b85-8321-9618374d25a8)
+    (effects (font (size 0.75 0.75) (thickness 0.125)))
+  )
 
   (segment (start 111.6965 55.1307) (end 114.2365 52.5907) (width 0.5) (layer "F.Cu") (net 1) (tstamp 42a0d800-ca57-469a-993e-af33d719efe2))
   (segment (start 104.6988 94.9706) (end 104.6988 97.5106) (width 0.25) (layer "F.Cu") (net 1) (tstamp 7d0975a8-12a0-4e68-ab12-40599279cebd))

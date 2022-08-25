@@ -25,7 +25,7 @@ WebServer server(80); //Server on port 80
 
 SpeedyStepper stepper;  // Create a new instance of the Stepper class:
 const int trimPot = 34;
-const int activationPin = 23;
+const int activationPin = 23; // Low Level Trigger!
 const int ledPin = 2;
 int speedy = 600; // initial speed of stepper motor in steps / second.  Adjustable via trimPot
 
@@ -111,7 +111,7 @@ void handleRoot() {
 
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
-  digitalWrite(activationPin, HIGH);
+  digitalWrite(activationPin, LOW);
   digitalWrite(ledPin, HIGH);
 #ifdef __DEBUG__
   println("Edged...");
@@ -124,7 +124,7 @@ void targetEdge() {
 }
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
-  digitalWrite(activationPin, LOW);
+  digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, LOW);
 #ifdef __DEBUG__
   println("Faced...");
