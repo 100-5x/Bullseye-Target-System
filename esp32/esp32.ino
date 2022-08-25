@@ -1,4 +1,4 @@
-#define __DEBUG__
+//#define __DEBUG__
 
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
@@ -22,19 +22,12 @@
 const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
-// Create a new instance of the Stepper class:
-SpeedyStepper stepper;
 
-//String header;
-
-
-
-// Auxiliar variables to store the current output state
-//String activationPinState = "off";
+SpeedyStepper stepper;  // Create a new instance of the Stepper class:
 const int trimPot = 34;
 const int activationPin = 23;
 const int ledPin = 2;
-int speedy = 600;
+int speedy = 600; // initial speed of stepper motor in steps / second.  Adjustable via trimPot
 
 #define CW 1
 #define CCW -1
@@ -55,7 +48,7 @@ void setup() {
 #endif
 
   pinMode(activationPin, OUTPUT);
-  pinMode(17, INPUT);
+  pinMode(17, INPUT); // pin will determine direction of stepper motor travel
   digitalWrite(activationPin, LOW);
   delay(500); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
@@ -67,11 +60,6 @@ void setup() {
 #ifdef __DEBUG__
   print("Move Steps: ");
   println(moveSteps);
-#endif
-  
-
-  
-#ifdef __DEBUG__
   print("Setting AP (Access Point)…");
 #endif
 
@@ -100,7 +88,7 @@ void loop(){
   int analogValue = analogRead(trimPot);
   // Rescale to potentiometer's voltage (from 0V to 3.3V):
 #ifdef __DEBUG__
-  print("Analog Value: ");
+  print("Analog V alue: ");
   println(analogValue);
 #endif
   speedy = map(analogValue, 0, 4096,400,2000);
@@ -124,7 +112,7 @@ void handleRoot() {
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   digitalWrite(activationPin, HIGH);
-  digitalWrite(ledPin, LOW);
+  digitalWrite(ledPin, HIGH);
 #ifdef __DEBUG__
   println("Edged...");
   println(edgePos);
