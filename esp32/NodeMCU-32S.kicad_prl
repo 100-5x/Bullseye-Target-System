@@ -70,6 +70,19 @@
     "version": 3
   },
   "project": {
-    "files": []
+    "files": [
+      {
+        "name": "NodeMCU-32S.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": true,
+          "pos_x": 291,
+          "pos_y": 120,
+          "size_x": 1280,
+          "size_y": 632
+        }
+      }
+    ]
   }
 }

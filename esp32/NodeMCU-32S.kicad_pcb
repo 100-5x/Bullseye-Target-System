@@ -1153,7 +1153,7 @@
   (gr_line (start 108.9152 90.043) (end 119.0752 90.043) (layer "F.SilkS") (width 0.15) (tstamp 6a8a1901-a3c7-470d-99d9-02146451972b))
   (gr_line (start 119.2022 90.0176) (end 116.6622 92.5576) (layer "F.SilkS") (width 0.15) (tstamp b55f6fd6-b5a9-46c1-9ccf-a9b9dbedb0ae))
   (gr_rect (start 58 45.6692) (end 145.034 116.7892) (layer "Edge.Cuts") (width 0.2) (fill none) (tstamp 8f72ca0e-c27a-4787-a8fb-6b666295e853))
-  (gr_text "Board Design 1.4\n\n" (at 120.9548 62.8904) (layer "B.SilkS") (tstamp 3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c)
+  (gr_text "Board Design 1.4\n\n" (at 83.82 55.88) (layer "B.SilkS") (tstamp 3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c)
     (effects (font (size 2 2) (thickness 0.25)) (justify mirror))
   )
   (gr_text "DIR" (at 141.7066 73.6854) (layer "F.SilkS") (tstamp 02c3eef0-f8aa-4614-bacb-06505b5cecd2)
