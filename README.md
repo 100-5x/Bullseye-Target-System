@@ -15,4 +15,4 @@ I have three options put into my PCB (Apple Pay / PayPal / Cash):
 
 See the [Wiki](https://github.com/100-5x/Bullseye-Target-System/wiki/Mounting-and-using-the-Turning-Target-System) for more details!
 
-Email me at: smdial [@t] alumni [dot] purdue [dot] edu
+Email me at: smdial [@] alumni [dot] purdue [dot] edu
