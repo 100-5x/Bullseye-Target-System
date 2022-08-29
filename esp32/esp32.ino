@@ -1,4 +1,4 @@
-//#define __DEBUG__
+#define __DEBUG__
 
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
@@ -32,7 +32,7 @@ int speedy = 600; // initial speed of stepper motor in steps / second.  Adjustab
 #define CW 1
 #define CCW -1
 
-int edgePos = 90;
+
 int moveSteps = 200;
 int Step = 0;
 
@@ -49,7 +49,7 @@ void setup() {
 
   pinMode(activationPin, OUTPUT);
   pinMode(17, INPUT); // pin will determine direction of stepper motor travel
-  digitalWrite(activationPin, LOW);
+  digitalWrite(activationPin, HIGH);
   delay(500); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
@@ -59,7 +59,7 @@ void setup() {
 
 #ifdef __DEBUG__
   print("Move Steps: ");
-  println(moveSteps);
+  println(Step);
   print("Setting AP (Access Point)…");
 #endif
 
@@ -88,18 +88,18 @@ void loop(){
   int analogValue = analogRead(trimPot);
   // Rescale to potentiometer's voltage (from 0V to 3.3V):
 #ifdef __DEBUG__
-  print("Analog V alue: ");
-  println(analogValue);
+//  print("Analog V alue: ");
+//  println(analogValue);
 #endif
   speedy = map(analogValue, 0, 4096,400,2000);
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
 #ifdef __DEBUG__
-  print("Speed: ");
-  println(speedy);
-  print("Direction: ");
-  println(moveSteps);
+//  print("Speed: ");
+//  println(speedy);
+//  print("Direction: ");
+//  println(moveSteps);
 #endif
   //Serial.println(voltage);
   delay(100);
@@ -115,7 +115,7 @@ void targetEdge() {
   digitalWrite(ledPin, HIGH);
 #ifdef __DEBUG__
   println("Edged...");
-  println(edgePos);
+  println(Step);
   print("Speed: ");
   println(speedy);
 #endif
