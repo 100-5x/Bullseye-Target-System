@@ -1,4 +1,4 @@
-#define __DEBUG__
+//#define __DEBUG__
 
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
@@ -23,11 +23,11 @@ const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
 
-SpeedyStepper stepper;  // Create a new instance of the Stepper class:
-const int trimPot = 34;
+SpeedyStepper stepper;        // Create a new instance of the Stepper class:
+const int trimPot = 34;       // Adjust the Speed of the trun
 const int activationPin = 23; // Low Level Trigger!
-const int ledPin = 2;
-int speedy = 600; // initial speed of stepper motor in steps / second.  Adjustable via trimPot
+const int ledPin = 2;         // LED Built-in for Esp32
+int speedy = 600;             // initial speed of stepper motor in steps / second.  Adjustable via trimPot
 
 #define CW 1
 #define CCW -1
@@ -73,65 +73,93 @@ void setup() {
   IPAddress IP = WiFi.softAPIP();
   server.on("/edge", targetEdge);      //Which routine to handle at edge location
   server.on("/face", targetFace);      //Which routine to handle at face location
-  server.on("/", handleRoot);      //Which routine to handle at root location
+  server.on("/", handleRoot);          //Which routine to handle at root location
   delay(500);
-  server.begin();                  //Start server
+  server.begin();                      //Start server
+  
 #ifdef __DEBUG__
   println("HTTP server started");
 #endif
+
   delay(500);
-   stepper.connectToPins(stepPin, dirPin);
+  stepper.connectToPins(stepPin, dirPin);
 }
 
+
+//---------------------------------------//
+//------------ MAIN LOOP ----------------//
+//---------------------------------------//
+
 void loop(){
+  
   server.handleClient();          //Handle client requests  s
   int analogValue = analogRead(trimPot);
-  // Rescale to potentiometer's voltage (from 0V to 3.3V):
+
+  
 #ifdef __DEBUG__
-//  print("Analog V alue: ");
-//  println(analogValue);
+  print("Analog V alue: ");
+  println(analogValue);
 #endif
-  speedy = map(analogValue, 0, 4096,400,2000);
+
+  speedy = map(analogValue, 0, 4096,400,2000);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
 #ifdef __DEBUG__
-//  print("Speed: ");
-//  println(speedy);
-//  print("Direction: ");
-//  println(moveSteps);
+  delay(750);
+  print("Speed: ");
+  println(speedy);
+  print("Direction: ");
+  println(moveSteps);
 #endif
-  //Serial.println(voltage);
-  delay(100);
+
+  delay(250);
+  
 }
+
+//---------------------------------------//
+//------------ HTTP root-----------------//
+//---------------------------------------//
 void handleRoot() {
   server.send(200, "text/plain", "Target system requires http://192.168.4.1/face or http://192.168.4.1/edge");
 }
 
+//---------------------------------------//
+//------------- Target Edge -------------//
+//---------------------------------------//
 
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   digitalWrite(activationPin, LOW);
   digitalWrite(ledPin, HIGH);
+  
 #ifdef __DEBUG__
   println("Edged...");
   println(Step);
   print("Speed: ");
   println(speedy);
 #endif
+
   stepper.moveToPositionInSteps(Step);
  
 }
+
+//---------------------------------------//
+//------------ Face the Targets ---------//
+//---------------------------------------//
+
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, LOW);
+  
 #ifdef __DEBUG__
   println("Faced...");
   println(0);
   print("Speed: ");
   println(speedy);
 #endif
+
   stepper.moveToPositionInSteps(0);
   
 }
