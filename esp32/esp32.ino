@@ -1,5 +1,12 @@
 //#define __DEBUG__
 
+
+/*
+ * 
+ * Except as written in this agreement, Developer’s work product is provided ​“AS IS”.”
+ * 
+ */
+
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
    #define println(...) Serial.println(__VA_ARGS__)
