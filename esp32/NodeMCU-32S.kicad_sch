@@ -1344,7 +1344,7 @@
     (property "Value" "R_Potentiometer_Trim_US" (id 1) (at 85.09 102.8699 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "Potentiometer_THT:Potentiometer_Vishay_T73YP_Vertical" (id 2) (at 87.63 101.6 0)
+    (property "Footprint" "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical" (id 2) (at 87.63 101.6 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 87.63 101.6 0)
@@ -1556,7 +1556,7 @@
   (symbol (lib_id "power:+3.3V") (at 87.63 95.25 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 5495e93e-0811-49bc-b217-8f64356b3c7b)
-    (property "Reference" "#PWR?" (id 0) (at 87.63 99.06 0)
+    (property "Reference" "#PWR0111" (id 0) (at 87.63 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (id 1) (at 87.63 90.17 0))
@@ -1676,7 +1676,7 @@
   (symbol (lib_id "power:+3.3V") (at 105.41 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 97ecd81d-5268-47ab-9e66-d413d7280ed0)
-    (property "Reference" "#PWR?" (id 0) (at 105.41 102.87 0)
+    (property "Reference" "#PWR0110" (id 0) (at 105.41 102.87 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+3.3V" (id 1) (at 105.41 93.98 0))
@@ -1984,11 +1984,11 @@
     (path "/d5e38fca-598b-4d8a-98c9-6da71b070d70"
       (reference "#PWR0109") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/5495e93e-0811-49bc-b217-8f64356b3c7b"
-      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
-    )
     (path "/97ecd81d-5268-47ab-9e66-d413d7280ed0"
-      (reference "#PWR?") (unit 1) (value "+3.3V") (footprint "")
+      (reference "#PWR0110") (unit 1) (value "+3.3V") (footprint "")
+    )
+    (path "/5495e93e-0811-49bc-b217-8f64356b3c7b"
+      (reference "#PWR0111") (unit 1) (value "+3.3V") (footprint "")
     )
     (path "/414d8815-2cd5-4a60-a6c9-452c5087ded6"
       (reference "C1") (unit 1) (value "C_Polarized_Small_US") (footprint "Capacitor_THT:CP_Radial_D8.0mm_P3.80mm")
@@ -2027,7 +2027,7 @@
       (reference "R1") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal")
     )
     (path "/02376529-a7f0-4ee0-82d0-c26b2b59531d"
-      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Vishay_T73YP_Vertical")
+      (reference "RV1") (unit 1) (value "R_Potentiometer_Trim_US") (footprint "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical")
     )
     (path "/36411ff6-02f2-4518-91f8-2ec78503d07a"
       (reference "SW1") (unit 1) (value "SW_SPST") (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical")
