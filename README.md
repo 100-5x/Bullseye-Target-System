@@ -8,10 +8,10 @@ All options below will ship to you with mounting hardware (screws, blocks).  Mou
 
 You can download the code and create your own PCB and components (free).  However, I can send you a circuit board ready to go (except mounting)...
 
-I have three options put into my PCB (Apple Pay / PayPal / Cash):
-1. Using a MOSFET to activate OUTPUT +/- (used for a pneumatic solenoid); ***$125 + shipping***
-3. Using a Stepper Motor; ***Cost: **$200 + shipping*****
-4. Enabling an external realy module; **Cost $140 + shipping**
+I have three options put into my PCB:
+1. Using a MOSFET to activate OUTPUT +/- (used for a pneumatic solenoid); 
+3. Using a Stepper Motor; 
+4. Enabling an external realy module; 
 
 See the [Wiki](https://github.com/100-5x/Bullseye-Target-System/wiki/Mounting-and-using-the-Turning-Target-System) for more details!
 
