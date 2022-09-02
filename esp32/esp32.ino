@@ -34,13 +34,10 @@ SpeedyStepper stepper;        // Create a new instance of the Stepper class:
 const int trimPot = 34;       // Adjust the Speed of the trun
 const int activationPin = 23; // Low Level Trigger!
 const int ledPin = 2;         // LED Built-in for Esp32
+const int rotatePin = 35;     // Pin for Pot to adjust turn.
 int speedy = 600;             // initial speed of stepper motor in steps / second.  Adjustable via trimPot
-
 #define CW 1
 #define CCW -1
-
-
-int moveSteps = 200;
 int Step = 0;
 
 //---------------------------------------//
@@ -61,8 +58,9 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
   pinMode(trimPot, INPUT);
+  pinMode(rotatePin,INPUT);
 
-  if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+ 
 
 #ifdef __DEBUG__
   print("Move Steps: ");
@@ -100,15 +98,14 @@ void setup() {
 void loop(){
   
   server.handleClient();          //Handle client requests  s
-  int analogValue = analogRead(trimPot);
-
+  
   
 #ifdef __DEBUG__
-  print("Analog V alue: ");
-  println(analogValue);
-#endif
 
-  speedy = map(analogValue, 0, 4096,400,2000);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
+#endif
+  int moveSteps = map(analogRead(rotatePin), 0, 4096,200,1000);
+   if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+  speedy = map(analogRead(trimPot), 0, 4096,400,2000);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
