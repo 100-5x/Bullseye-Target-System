@@ -134,6 +134,7 @@ void handleRoot() {
 
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
+  delay(250);
   digitalWrite(activationPin, LOW);
   digitalWrite(ledPin, HIGH);
   
@@ -156,6 +157,7 @@ void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
   digitalWrite(activationPin, HIGH);
   digitalWrite(ledPin, LOW);
+  
   
 #ifdef __DEBUG__
   println("Faced...");
