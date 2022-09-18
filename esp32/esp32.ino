@@ -25,20 +25,22 @@
 #define stepPin 19 // PUL+
 #define motorInterfaceType 1
 
+#define CW 1
+#define CCW -1
 
 const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
 
-SpeedyStepper stepper;        // Create a new instance of the Stepper class:
-const int trimPot = 34;       // Adjust the Speed of the trun
-const int activationPin = 23; // Low Level Trigger!
-const int ledPin = 2;         // LED Built-in for Esp32
-const int rotatePin = 35;     // Pin for Pot to adjust turn.
-int speedy = 600;             // initial speed of stepper motor in steps / second.  Adjustable via trimPot
-#define CW 1
-#define CCW -1
+SpeedyStepper stepper;            // Create a new instance of the Stepper class:
+const int trimPot = 34;           // Adjust the Speed of the trun
+const int highActivationPin = 23;  // Low Level Trigger!
+const int lowActivationPin = 22;    // For MOSFET & AC SSR
+const int ledPin = 2;             // LED Built-in for Esp32
+const int rotatePin = 35;         // Pin for Pot to adjust turn.
+int speedy = 600;                 // initial speed of stepper motor in steps / second.  Adjustable via trimPot
 int Step = 0;
+int moveSteps = 200;
 
 //---------------------------------------//
 //---------------- SETUP ----------------//
@@ -51,9 +53,9 @@ void setup() {
   Serial.begin(115200);
 #endif
 
-  pinMode(activationPin, OUTPUT);
+  pinMode(lowActivationPin, OUTPUT);
   pinMode(17, INPUT); // pin will determine direction of stepper motor travel
-  digitalWrite(activationPin, HIGH);
+  digitalWrite(lowActivationPin, HIGH);
   delay(500); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
@@ -63,8 +65,6 @@ void setup() {
  
 
 #ifdef __DEBUG__
-  print("Move Steps: ");
-  println(Step);
   print("Setting AP (Access Point)…");
 #endif
 
@@ -84,6 +84,8 @@ void setup() {
   
 #ifdef __DEBUG__
   println("HTTP server started");
+  print("IP address: ");
+  println(IP);
 #endif
 
   delay(500);
@@ -99,22 +101,26 @@ void loop(){
   
   server.handleClient();          //Handle client requests  s
   
+   if (digitalRead(rotatePin) == LOW ) {
+      moveSteps = 200;
+   } else {
+      moveSteps = map(analogRead(rotatePin), 5, 4096,45,210); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+   }
   
-#ifdef __DEBUG__
-
-#endif
-  int moveSteps = map(analogRead(rotatePin), 0, 4096,45,210);
-   if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+  if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+  
   speedy = map(analogRead(trimPot), 0, 4096,400,2000);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
 #ifdef __DEBUG__
-  delay(750);
+  delay(1000);
   print("Speed: ");
   println(speedy);
   print("Direction: ");
   println(moveSteps);
+  print("Steps: ");
+  println(Step);
 #endif
 
   delay(250);
@@ -135,7 +141,8 @@ void handleRoot() {
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   delay(250);
-  digitalWrite(activationPin, LOW);
+  digitalWrite(lowActivationPin, LOW);
+  digitalWrite(highActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
   
 #ifdef __DEBUG__
@@ -155,7 +162,8 @@ void targetEdge() {
 
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
-  digitalWrite(activationPin, HIGH);
+  digitalWrite(lowActivationPin, HIGH);
+  digitalWrite(highActivationPin, LOW);
   digitalWrite(ledPin, LOW);
   
   
