@@ -34,8 +34,8 @@ WebServer server(80); //Server on port 80
 
 SpeedyStepper stepper;            // Create a new instance of the Stepper class:
 const int trimPot = 34;           // Adjust the Speed of the trun
-const int highActivationPin = 23;  // Low Level Trigger!
-const int lowActivationPin = 22;    // For MOSFET & AC SSR
+const int highActivationPin = 22;  // Low Level Trigger!
+const int lowActivationPin = 23;    // For MOSFET & AC SSR
 const int ledPin = 2;             // LED Built-in for Esp32
 const int rotatePin = 35;         // Pin for Pot to adjust turn.
 int speedy = 600;                 // initial speed of stepper motor in steps / second.  Adjustable via trimPot
@@ -101,11 +101,9 @@ void loop(){
   
   server.handleClient();          //Handle client requests  s
   
-   if (digitalRead(rotatePin) == LOW ) {
-      moveSteps = 200;
-   } else {
+   
       moveSteps = map(analogRead(rotatePin), 5, 4096,45,210); // Rescale to potentiometer's voltage (from 0V to 3.3V):
-   }
+
   
   if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
   
@@ -142,7 +140,7 @@ void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   delay(250);
   digitalWrite(lowActivationPin, LOW);
-  digitalWrite(highActivationPin, LOW);
+  digitalWrite(highActivationPin, HIGH);
   digitalWrite(ledPin, HIGH);
   
 #ifdef __DEBUG__
