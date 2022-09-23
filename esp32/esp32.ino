@@ -32,13 +32,13 @@ const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
 
-SpeedyStepper stepper;            // Create a new instance of the Stepper class:
-const int trimPot = 34;           // Adjust the Speed of the trun
-const int highActivationPin = 22;  // Low Level Trigger!
-const int lowActivationPin = 23;    // For MOSFET & AC SSR
-const int ledPin = 2;             // LED Built-in for Esp32
-const int rotatePin = 35;         // Pin for Pot to adjust turn.
-int speedy = 600;                 // initial speed of stepper motor in steps / second.  Adjustable via trimPot
+SpeedyStepper stepper;              // Create a new instance of the Stepper class:
+const int trimPot = 34;             // Adjust the Speed of the trun
+const int highActivationPin = 23;   // For MOSFET & AC SSR
+const int lowActivationPin = 22;    // Low Level Trigger!
+const int ledPin = 2;               // LED Built-in for Esp32
+const int rotatePin = 35;           // Pin for Pot to adjust turn.
+int speedy = 600;                   // initial speed of stepper motor in steps / second.  Adjustable via trimPot
 int Step = 0;
 int moveSteps = 200;
 
