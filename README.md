@@ -1,27 +1,20 @@
 # Bullseye Turning Target System
 
 
-Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on the App Store of your choice or [The Bullseye App](https://www.bullseyematch.app) website.  The following is a circuit board designed to compliment Tom's work:
+The Bullseye Turning Target System was developed for the practical precision pistol shooter. This system compliments Tom Talpey's excellent Bullseye Match app for your phone. Download the app through the App store of your choice or [The Bullseye App](https://www.bullseyematch.app) website. 
 
-
-All options below will ship to you fully soldered with mounting hardware.  Mount to a target style of your choice.  See the Stepper Motor pic below below for my pic of a local indoor gun range -- or use a Solenoid (AC/DC) for pneumatic turning, linear actuator etc.
+Each system can be purchased for $100 and contains a fully soldered circuit board with mounting hardware, including 8 metal screws and 4 plastic mounting elbows. For reference on what a fully built turning target system looks like, see the Stepper Motor pic below. Additional items that can be utilized within the turning target system include Solenoid (AC/DC) for pneumatic turning and linear actuator.
 
 [View in Action!](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_2864.mov) {click this link and then "View Raw" on next page}
 
-You can download the code and create your own PCB and components (free) if you would like.  For those not as adverturous, I sell a completely soldered circuit board and mounting hardware for $100
-
-I have three options put into my PCB (you can use any option)
-1. A DC passthrough output +/- (used for a pneumatic solenoid); 
-3. Using a Stepper Motor (buy on Amazon for approx $20);
-4. Upgrading Frank Thomas' TTS;  $25 extra.  Uses the Bullseye App with my controller to make your existing investment wireless.
-4. Or completing an AC power circuit (relay) (used for a pneumatic solenoid, linear actuator, etc); 
-5. Enabling an external realy module (low level trigger)
+Programmable options for your target turning system include:
+1. A DC passthrough output +/- (used for a pneumatic solenoid)
+3. Using a Stepper Motor (buy on Amazon for approx $20)
+4. Upgrading Frank Thomas' TTS, which will cost $125 for the total system. This integrates the Bullseye App with the Bullseye Turning Target System to make your existing investment wireless.
+4. Completing an AC power circuit (relay), which is used for a pneumatic solenoid, linear actuator, etc
+5. Enabling an external realy module, which will cost $110 for the total system.
 
 See the [Wiki](https://github.com/100-5x/Bullseye-Target-System/wiki/Mounting-and-using-the-Turning-Target-System) for more details!
 
 
-The unsoldered board looks like this;  You can see the options listed by the terminal blocks.<br>
-![PCB](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/top.svg)
-![GunRange](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_0835.jpeg)
-
-Email me at: smdial [@] alumni [dot] purdue [dot] edu
+Email me at: smdial@alumni.purdue.edu
