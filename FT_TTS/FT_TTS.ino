@@ -22,7 +22,7 @@
 const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
-const int lowActivationPin = 22;    // Low Level Trigger!
+const int lowActivationPin = 23;    // Low Level Trigger!
 const int ledPin = 2;               // LED Built-in for Esp32
 
 
@@ -100,6 +100,7 @@ void targetEdge() {
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
   delay(250);
+    digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
 
   
@@ -118,6 +119,7 @@ void targetFace() {
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
   delay(250);
+    digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
   
   
