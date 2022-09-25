@@ -11,6 +11,7 @@ You can download the code and create your own PCB and components (free).  Howeve
 I have three options put into my PCB (you can use any option)
 1. A DC passthrough output +/- (used for a pneumatic solenoid); 
 3. Using a Stepper Motor (buy on Amazon for approx $20);
+4. Upgrading Frank Thomas' TTS;  $25 extra.  Uses the Bullseye App with my controller to make your existing investment wireless.
 4. Or completing an AC power circuit (relay) (used for a pneumatic solenoid, linear actuator, etc); 
 5. Enabling an external realy module (low level trigger)
 
