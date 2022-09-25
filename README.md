@@ -8,7 +8,7 @@ All options below will ship to you fully soldered with mounting hardware.  Mount
 
 [View in Action!](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_2864.mov) {click this link and then "View Raw" on next page}
 
-You can download the code and create your own PCB and components (free).  However, I can send you a circuit board ready to go (except mounting) for $100...
+You can download the code and create your own PCB and components (free) if you would like.  For those not as adverturous, I sell a completely soldered circuit board and mounting hardware for $100
 
 I have three options put into my PCB (you can use any option)
 1. A DC passthrough output +/- (used for a pneumatic solenoid); 
