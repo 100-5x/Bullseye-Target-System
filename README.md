@@ -6,7 +6,7 @@ Tom Talpey has an EXCELLENT Bullseye Match app for your phone -- check it out on
 
 All options below will ship to you fully soldered with mounting hardware.  Mount to a target style of your choice.  See the Stepper Motor pic below below for my pic of a local indoor gun range -- or use a Solenoid (AC/DC) for pneumatic turning, linear actuator etc.
 
-![View in Action!](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_2864.mov)
+[View in Action!](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_2864.mov)
 
 You can download the code and create your own PCB and components (free).  However, I can send you a circuit board ready to go (except mounting) for $100...
 
