@@ -99,7 +99,7 @@ void targetEdge() {
   
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
-  delay(250);
+  delay(500);
     digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
 
@@ -118,7 +118,7 @@ void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
-  delay(250);
+  delay(500);
     digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
   
