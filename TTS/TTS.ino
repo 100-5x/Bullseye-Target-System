@@ -102,7 +102,7 @@ void loop(){
   server.handleClient();          //Handle client requests  s
   
    
-      moveSteps = map(analogRead(rotatePin), 5, 4096,45,210); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  moveSteps = map(analogRead(rotatePin), 5, 4096,45,210); // Rescale to potentiometer's voltage (from 0V to 3.3V):
 
   
   if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
