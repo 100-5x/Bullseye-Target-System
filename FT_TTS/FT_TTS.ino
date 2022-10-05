@@ -5,6 +5,8 @@
  * 
  * Except as written in this agreement, Developer’s work product is provided ​“AS IS”.”
  * This code will replace Frank Thomas' TTS controller, making this target turn wirelessly.
+ * Frank's system does not have the concept of "Face" or "Edge" so every time this is called
+ * it will just trigger a the target to move to the next phase.
  * 
  */
 
