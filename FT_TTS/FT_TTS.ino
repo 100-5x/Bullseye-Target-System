@@ -26,6 +26,7 @@ WebServer server(80); //Server on port 80
 
 const int lowActivationPin = 23;    // Low Level Trigger!
 const int ledPin = 2;               // LED Built-in for Esp32
+char currentState = 'F';
 
 
 //---------------------------------------//
@@ -99,11 +100,26 @@ void handleRoot() {
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   
+  if (currentState == 'F') 
+  {
+
+  #ifdef __DEBUG__
+    println("Current State is Faced -- executing turn...");
+  #endif
+
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
   delay(500);
     digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
+  currentState = 'E';
+  
+  } else {
+#ifdef __DEBUG__
+  println("Do nothing, as the system is already Edged.");
+#endif
+
+  }
 
   
 #ifdef __DEBUG__
@@ -118,16 +134,31 @@ void targetEdge() {
 
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
+  
+  if (currentState == 'E') 
+  {
+
+  #ifdef __DEBUG__
+    println("Current State is Edged -- executing turn...");
+  #endif
+  
   digitalWrite(lowActivationPin, LOW);
   digitalWrite(ledPin, HIGH);
   delay(500);
     digitalWrite(ledPin, LOW);
   digitalWrite(lowActivationPin, HIGH);
+
+  currentState = 'F';
   
-  
+  } else {
+#ifdef __DEBUG__
+  println("Do nothing, as the system is already Faced.");
+#endif
+  }
+
 #ifdef __DEBUG__
   println("Faced...");
-
 #endif
+ 
 
 }
