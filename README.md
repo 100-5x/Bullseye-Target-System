@@ -10,7 +10,7 @@ Each system can be purchased for $100 and contains a fully soldered circuit boar
 Programmable options for your target turning system include:
 1. A DC passthrough output +/- (used for a pneumatic solenoid)
 3. Using a Stepper Motor (buy on Amazon for approx $20)
-4. Upgrading Frank Thomas' TTS, which will cost $125 for the total system. This integrates the Bullseye App with the Bullseye Turning Target System to make your existing investment wireless.
+4. Upgrading "Portable Target Systems" (from Minnesota) which will cost $125 for the total system. This integrates the Bullseye App with the Bullseye Turning Target System to make your existing investment wireless.
 4. Completing an AC power circuit (relay), which is used for a pneumatic solenoid, linear actuator, etc
 5. Enabling an external realy module, which will cost $110 for the total system.
 
