@@ -24,7 +24,7 @@
 const char* ssid = "target.Wifi";
 WebServer server(80); //Server on port 80
 
-const int lowActivationPin = 23;    // Low Level Trigger!
+const int lowActivationPin = 22;    // Low Level Trigger!
 const int ledPin = 2;               // LED Built-in for Esp32
 char currentState = 'F';
 
@@ -42,7 +42,7 @@ void setup() {
 
   pinMode(lowActivationPin, OUTPUT);
    digitalWrite(lowActivationPin, HIGH);
-  delay(500); // give power time to stabilize.
+  delay(100); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
 
@@ -54,14 +54,14 @@ void setup() {
   WiFi.mode(WIFI_AP);
   delay(100);
   WiFi.softAP("target.Wifi");
-  delay(500); // give power time to stabilize.
+  delay(100); // give power time to stabilize.
   WiFi.softAP(ssid);
   delay(100);
   IPAddress IP = WiFi.softAPIP();
   server.on("/edge", targetEdge);      //Which routine to handle at edge location
   server.on("/face", targetFace);      //Which routine to handle at face location
   server.on("/", handleRoot);          //Which routine to handle at root location
-  delay(500);
+  delay(100);
   server.begin();                      //Start server
   
 #ifdef __DEBUG__
@@ -70,7 +70,7 @@ void setup() {
   println(IP);
 #endif
 
-  delay(500);
+  delay(100);
 
 }
 
