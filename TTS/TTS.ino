@@ -54,9 +54,11 @@ void setup() {
 #endif
 
   pinMode(lowActivationPin, OUTPUT);
+  pinMode(highActivationPin, OUTPUT);
   pinMode(17, INPUT); // pin will determine direction of stepper motor travel
   digitalWrite(lowActivationPin, HIGH);
-  delay(500); // give power time to stabilize.
+  digitalWrite(highActivationPin, LOW);  
+  delay(200); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
   pinMode(trimPot, INPUT);
@@ -70,9 +72,9 @@ void setup() {
 
 
   WiFi.mode(WIFI_AP);
-  delay(100);
+  delay(250);
   WiFi.softAP("target.Wifi");
-  delay(100); // give power time to stabilize.
+  delay(150); // give power time to stabilize.
   WiFi.softAP(ssid);
   delay(100);
   IPAddress IP = WiFi.softAPIP();
@@ -102,12 +104,12 @@ void loop(){
   server.handleClient();          //Handle client requests  s
   
    
-moveSteps = map(analogRead(rotatePin), 5, 4096,45,210); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+moveSteps = map(analogRead(rotatePin), 5, 4096,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
 
   
   if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
   
-  speedy = map(analogRead(trimPot), 0, 4096,400,2000);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  speedy = map(analogRead(trimPot), 0, 4096,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
