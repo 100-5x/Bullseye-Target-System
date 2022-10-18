@@ -1,0 +1,353 @@
+2022-10-17 23:47:17.317 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-17 23:47:17.334 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-17 23:47:19.503 [main] INFO  Opening 'freerouting.rules'...
+2022-10-17 23:47:19.506 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-17 23:47:19.710 [Thread-0] INFO  Starting auto-routing...
+2022-10-17 23:47:19.710 [main] TRACE Method 'MainApplication.main()' was performed in 2.79 seconds.
+2022-10-17 23:47:20.008 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.014 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.020 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.031 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.043 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.065 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:47:20.384 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board 'bc5996d1d2a6522f879548e64ddb3c4f' making 114 changes' was performed in 0.54 seconds.
+2022-10-17 23:47:20.437 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '03d149096ce7859017d78764d2bba8a3' making 3 changes' was performed in 0.03 seconds.
+2022-10-17 23:47:20.466 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'f0ff69e0b1f81605f4de602f296c954b' making 0 changes' was performed in 0.01 seconds.
+2022-10-17 23:47:20.468 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.76 seconds.
+2022-10-17 23:47:20.469 [Thread-0] INFO  Auto-routing was completed in 0.76 seconds.
+2022-10-17 23:47:20.470 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-17 23:47:20.996 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 14 vias and 861,960.65 trace length running on 15 threads.' was performed in 0.52 seconds.
+2022-10-17 23:47:22.506 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 39 items, 14 vias and 859,800.68 trace length running on 15 threads.' was performed in 1.51 seconds.
+2022-10-17 23:47:22.849 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 39 items, 14 vias and 859,792.72 trace length running on 15 threads.' was performed in 0.34 seconds.
+2022-10-17 23:47:23.159 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #4 with 39 items, 14 vias and 857,619.70 trace length running on 15 threads.' was performed in 0.31 seconds.
+2022-10-17 23:47:23.397 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #5 with 39 items, 14 vias and 857,619.70 trace length running on 15 threads.' was performed in 0.23 seconds.
+2022-10-17 23:47:23.399 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 2.93 seconds.
+2022-10-17 23:47:23.400 [Thread-0] INFO  Route optimization was completed in 2.93 seconds and it improved the design by ~0.25%.
+2022-10-17 23:47:23.407 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 3.70 seconds.
+2022-10-17 23:47:23.409 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-17 23:48:40.492 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-17 23:48:40.506 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-17 23:48:41.443 [main] WARN  The normalization of net 'Net-(SW1-Pad2)' failed.
+2022-10-17 23:48:42.203 [main] INFO  Opening 'freerouting.rules'...
+2022-10-17 23:48:42.205 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-17 23:48:42.413 [Thread-0] INFO  Starting auto-routing...
+2022-10-17 23:48:42.414 [main] TRACE Method 'MainApplication.main()' was performed in 2.11 seconds.
+2022-10-17 23:48:42.723 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:48:42.762 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:48:43.003 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '547da990abe61f638771c49157faab9c' making 106 changes' was performed in 0.46 seconds.
+2022-10-17 23:48:43.063 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board 'f904f304af32da3b81a675fa12e49002' making 3 changes' was performed in 0.04 seconds.
+2022-10-17 23:48:43.088 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'ea757824b1d2bfbb34c74146235dba8e' making 0 changes' was performed in 0.01 seconds.
+2022-10-17 23:48:43.089 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.67 seconds.
+2022-10-17 23:48:43.090 [Thread-0] INFO  Auto-routing was completed in 0.67 seconds.
+2022-10-17 23:48:43.091 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-17 23:48:43.571 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 14 vias and 854,895.68 trace length running on 15 threads.' was performed in 0.47 seconds.
+2022-10-17 23:48:43.573 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.48 seconds.
+2022-10-17 23:48:43.575 [Thread-0] INFO  Route optimization was completed in 0.48 seconds and it improved the design by ~0.09%.
+2022-10-17 23:48:43.586 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 1.17 seconds.
+2022-10-17 23:48:43.588 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-17 23:53:29.331 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-17 23:53:29.347 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-17 23:53:30.906 [main] INFO  Opening 'freerouting.rules'...
+2022-10-17 23:53:30.908 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-17 23:53:31.123 [Thread-0] INFO  Starting auto-routing...
+2022-10-17 23:53:31.123 [main] TRACE Method 'MainApplication.main()' was performed in 1.97 seconds.
+2022-10-17 23:53:31.428 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:53:31.783 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board 'c07fc65be2a13977c49da76c25c4cc75' making 99 changes' was performed in 0.52 seconds.
+2022-10-17 23:53:31.813 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '7433b68fd175e8f9e2cc92ac5fc2f8ed' making 0 changes' was performed in 0.01 seconds.
+2022-10-17 23:53:31.815 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.69 seconds.
+2022-10-17 23:53:31.816 [Thread-0] INFO  Auto-routing was completed in 0.69 seconds.
+2022-10-17 23:53:31.817 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-17 23:53:32.258 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 15 vias and 865,768.78 trace length running on 15 threads.' was performed in 0.43 seconds.
+2022-10-17 23:53:32.668 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 32 items, 15 vias and 865,223.83 trace length running on 15 threads.' was performed in 0.41 seconds.
+2022-10-17 23:53:33.080 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 32 items, 15 vias and 860,419.03 trace length running on 15 threads.' was performed in 0.41 seconds.
+2022-10-17 23:53:33.436 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #4 with 32 items, 15 vias and 860,243.43 trace length running on 15 threads.' was performed in 0.35 seconds.
+2022-10-17 23:53:33.771 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #5 with 32 items, 15 vias and 859,619.69 trace length running on 15 threads.' was performed in 0.33 seconds.
+2022-10-17 23:53:34.120 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #6 with 33 items, 15 vias and 859,550.86 trace length running on 15 threads.' was performed in 0.34 seconds.
+2022-10-17 23:53:34.424 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #7 with 33 items, 15 vias and 859,530.56 trace length running on 15 threads.' was performed in 0.30 seconds.
+2022-10-17 23:53:34.730 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #8 with 33 items, 15 vias and 859,483.36 trace length running on 15 threads.' was performed in 0.30 seconds.
+2022-10-17 23:53:35.007 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #9 with 33 items, 15 vias and 859,473.26 trace length running on 15 threads.' was performed in 0.27 seconds.
+2022-10-17 23:53:35.284 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #10 with 33 items, 15 vias and 859,449.66 trace length running on 15 threads.' was performed in 0.28 seconds.
+2022-10-17 23:53:35.562 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #11 with 33 items, 15 vias and 859,444.56 trace length running on 15 threads.' was performed in 0.28 seconds.
+2022-10-17 23:53:35.872 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #12 with 33 items, 15 vias and 859,432.76 trace length running on 15 threads.' was performed in 0.31 seconds.
+2022-10-17 23:53:36.050 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #13 with 33 items, 15 vias and 859,430.26 trace length running on 15 threads.' was performed in 0.18 seconds.
+2022-10-17 23:53:36.258 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #14 with 33 items, 15 vias and 859,424.36 trace length running on 15 threads.' was performed in 0.21 seconds.
+2022-10-17 23:53:36.260 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 4.44 seconds.
+2022-10-17 23:53:36.261 [Thread-0] INFO  Route optimization was completed in 4.44 seconds and it improved the design by ~0.37%.
+2022-10-17 23:53:36.269 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 5.15 seconds.
+2022-10-17 23:53:36.270 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-17 23:55:27.752 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-17 23:55:27.764 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-17 23:55:28.581 [main] WARN  The normalization of net 'VCC' failed.
+2022-10-17 23:55:29.493 [main] INFO  Opening 'freerouting.rules'...
+2022-10-17 23:55:29.494 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-17 23:55:29.697 [Thread-0] INFO  Starting auto-routing...
+2022-10-17 23:55:29.698 [main] TRACE Method 'MainApplication.main()' was performed in 2.13 seconds.
+2022-10-17 23:55:29.990 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:55:30.034 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-17 23:55:30.098 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:55:30.128 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-17 23:55:30.146 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:55:30.163 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-17 23:55:30.435 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '2364a5d187979ae211b98f1e45584a45' making 94 changes' was performed in 0.60 seconds.
+2022-10-17 23:55:30.518 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board '60ef9ac1ddcfae9770da863ed722fddc' making 11 changes' was performed in 0.06 seconds.
+2022-10-17 23:55:30.544 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'f0f3ba6a85e0cc931f5b2d2de606cefc' making 0 changes' was performed in 0.01 seconds.
+2022-10-17 23:55:30.545 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.85 seconds.
+2022-10-17 23:55:30.546 [Thread-0] INFO  Auto-routing was completed in 0.85 seconds.
+2022-10-17 23:55:30.547 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-17 23:55:31.011 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 15 vias and 862,180.09 trace length running on 15 threads.' was performed in 0.46 seconds.
+2022-10-17 23:55:31.349 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 32 items, 15 vias and 860,441.12 trace length running on 15 threads.' was performed in 0.34 seconds.
+2022-10-17 23:55:31.670 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 32 items, 15 vias and 859,806.16 trace length running on 15 threads.' was performed in 0.32 seconds.
+2022-10-17 23:55:31.672 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 1.12 seconds.
+2022-10-17 23:55:31.673 [Thread-0] INFO  Route optimization was completed in 1.12 seconds and it improved the design by ~0.14%.
+2022-10-17 23:55:31.683 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 1.99 seconds.
+2022-10-17 23:55:31.684 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-18 00:00:38.191 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-18 00:00:38.203 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-18 00:00:39.032 [main] WARN  The normalization of net 'VCC' failed.
+2022-10-18 00:00:39.943 [main] INFO  Opening 'freerouting.rules'...
+2022-10-18 00:00:39.945 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-18 00:00:40.293 [Thread-0] INFO  Starting auto-routing...
+2022-10-18 00:00:40.294 [main] TRACE Method 'MainApplication.main()' was performed in 2.29 seconds.
+2022-10-18 00:00:40.640 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-18 00:00:40.693 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:00:40.736 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-18 00:00:40.764 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:00:41.123 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '6610f14e9e3f85a7fae9a34456e9debe' making 105 changes' was performed in 0.69 seconds.
+2022-10-18 00:00:41.159 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board 'bc7766e610dad60f371e619019e6124c' making 0 changes' was performed in 0.01 seconds.
+2022-10-18 00:00:41.160 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.86 seconds.
+2022-10-18 00:00:41.161 [Thread-0] INFO  Auto-routing was completed in 0.86 seconds.
+2022-10-18 00:00:41.161 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-18 00:00:41.593 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 15 vias and 861,711.23 trace length running on 15 threads.' was performed in 0.42 seconds.
+2022-10-18 00:00:41.955 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 31 items, 15 vias and 860,289.76 trace length running on 15 threads.' was performed in 0.36 seconds.
+2022-10-18 00:00:42.299 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 31 items, 15 vias and 859,496.18 trace length running on 15 threads.' was performed in 0.34 seconds.
+2022-10-18 00:00:42.301 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 1.14 seconds.
+2022-10-18 00:00:42.302 [Thread-0] INFO  Route optimization was completed in 1.14 seconds and it improved the design by ~0.13%.
+2022-10-18 00:00:42.312 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 2.02 seconds.
+2022-10-18 00:00:42.313 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-18 00:03:17.554 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-18 00:03:17.574 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-18 00:03:18.537 [main] WARN  The normalization of net 'VCC' failed.
+2022-10-18 00:03:18.594 [main] WARN  The normalization of net 'GND' failed.
+2022-10-18 00:03:19.648 [main] INFO  Opening 'freerouting.rules'...
+2022-10-18 00:03:19.650 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-18 00:03:19.841 [Thread-0] INFO  Starting auto-routing...
+2022-10-18 00:03:19.842 [main] TRACE Method 'MainApplication.main()' was performed in 2.49 seconds.
+2022-10-18 00:03:20.189 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-18 00:03:20.254 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:03:20.286 [Thread-0] ERROR The normalization of net 'VCC' failed.
+java.lang.Exception: We reached the maximum normalization depth (16).
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:670) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:696) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.PolylineTrace.normalize(PolylineTrace.java:665) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.board.BasicBoard.normalize_traces(BasicBoard.java:894) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.InsertFoundConnectionAlgo.get_instance(InsertFoundConnectionAlgo.java:81) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.AutorouteEngine.autoroute_connection(AutorouteEngine.java:186) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_item(BatchAutorouter.java:382) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_pass(BatchAutorouter.java:279) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.autoroute.BatchAutorouter.autoroute_passes(BatchAutorouter.java:168) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.BatchAutorouterThread.thread_action(BatchAutorouterThread.java:75) ~[freerouting-1.6.2.jar:unspecified]
+	at app.freerouting.interactive.InteractiveActionThread.run(InteractiveActionThread.java:49) ~[freerouting-1.6.2.jar:unspecified]
+2022-10-18 00:03:20.308 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:03:20.710 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '1e0be4bc1dcd892afec34dc35d07cffd' making 103 changes' was performed in 0.74 seconds.
+2022-10-18 00:03:20.780 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board 'b60e13e9c371f186f70b9ed4b3cd067f' making 3 changes' was performed in 0.04 seconds.
+2022-10-18 00:03:20.811 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'b8ddae1814a59661d5993a5a9227faed' making 0 changes' was performed in 0.01 seconds.
+2022-10-18 00:03:20.812 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.97 seconds.
+2022-10-18 00:03:20.813 [Thread-0] INFO  Auto-routing was completed in 0.97 seconds.
+2022-10-18 00:03:20.814 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-18 00:03:21.277 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 15 vias and 861,979.97 trace length running on 15 threads.' was performed in 0.45 seconds.
+2022-10-18 00:03:21.279 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 0.46 seconds.
+2022-10-18 00:03:21.281 [Thread-0] INFO  Route optimization was completed in 0.46 seconds and it improved the design by ~0.08%.
+2022-10-18 00:03:21.292 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 1.45 seconds.
+2022-10-18 00:03:21.293 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
+2022-10-18 00:16:22.246 [main] INFO  Freerouting v1.6.2 (build-date: 2022-07-13)
+2022-10-18 00:16:22.259 [main] INFO  Opening '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.dsn'...
+2022-10-18 00:16:23.055 [main] WARN  The normalization of net 'VCC' failed.
+2022-10-18 00:16:24.169 [main] INFO  Opening 'freerouting.rules'...
+2022-10-18 00:16:24.171 [main] ERROR File 'freerouting.rules' was not found.
+2022-10-18 00:16:24.271 [Thread-0] INFO  Starting auto-routing...
+2022-10-18 00:16:24.272 [main] TRACE Method 'MainApplication.main()' was performed in 2.21 seconds.
+2022-10-18 00:16:24.440 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.539 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.552 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.556 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.561 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.572 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.579 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.596 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.622 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.640 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.681 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.686 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.693 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:24.705 [Thread-0] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:25.004 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #1 on board '625d26bae6b77f98537faac3eede6a43' making 149 changes' was performed in 0.60 seconds.
+2022-10-18 00:16:25.051 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #2 on board 'a8454cbd95582b56d46eade6da628c69' making 3 changes' was performed in 0.02 seconds.
+2022-10-18 00:16:25.081 [Thread-0] TRACE Method 'BatchAutorouter.autoroute_pass #3 on board 'c72674a3074c0ea877d8a6e5d6591e16' making 0 changes' was performed in 0.01 seconds.
+2022-10-18 00:16:25.083 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-autorouting' was performed in 0.81 seconds.
+2022-10-18 00:16:25.085 [Thread-0] INFO  Auto-routing was completed in 0.81 seconds.
+2022-10-18 00:16:25.086 [Thread-0] INFO  Starting route optimization on 15 threads...
+2022-10-18 00:16:26.381 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #1 with 0 items, 15 vias and 883,166.36 trace length running on 15 threads.' was performed in 1.29 seconds.
+2022-10-18 00:16:27.506 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #2 with 51 items, 15 vias and 880,739.08 trace length running on 15 threads.' was performed in 1.12 seconds.
+2022-10-18 00:16:28.709 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #3 with 51 items, 15 vias and 878,340.23 trace length running on 15 threads.' was performed in 1.20 seconds.
+2022-10-18 00:16:28.992 [Thread-50] WARN  FloatLine: Parameter is null
+2022-10-18 00:16:29.753 [Thread-0] TRACE Method 'BatchOptRouteMT.opt_route_pass #4 with 51 items, 15 vias and 876,938.69 trace length running on 15 threads.' was performed in 1.04 seconds.
+2022-10-18 00:16:29.754 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()-routeoptimization' was performed in 4.67 seconds.
+2022-10-18 00:16:29.756 [Thread-0] INFO  Route optimization was completed in 4.67 seconds and it improved the design by ~0.45%.
+2022-10-18 00:16:29.762 [Thread-0] TRACE Method 'BatchAutorouterThread.thread_action()' was performed in 5.49 seconds.
+2022-10-18 00:16:29.764 [Thread-0] INFO  Saving '/Users/sdial/Documents/GitHub/Target-System/PCB Design/freerouting.ses'...
