@@ -3,6 +3,9 @@
 
 /*
  * 
+
+This is a special build for the portable Target Systems out of Minnesota.  It is not the normal Turning Target System build.  
+
  * Except as written in this agreement, Developer’s work product is provided ​“AS IS”.”
  * This code will replace Frank Thomas' TTS controller, making this target turn wirelessly.
  * Frank's system does not have the concept of "Face" or "Edge" so every time this is called
