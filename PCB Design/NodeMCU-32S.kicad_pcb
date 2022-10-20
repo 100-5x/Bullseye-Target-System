@@ -478,7 +478,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 85c1fa3f-6d99-4695-99b7-5f01d089ccb6)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.08 90) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 2.54 5.08 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 69826414-7980-47b7-9517-3a82eb872dab)
     )
@@ -718,7 +718,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp ca7cd44f-48c8-4ac8-adb6-30d31cbcb46d)
     )
-    (fp_text value "R_Potentiometer_Trim_US" (at 0 2.52 -90) (layer "F.Fab")
+    (fp_text value "R_Potentiometer_Trim_US" (at 0 2.52 -90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 6610317a-1ce8-4ede-af33-1a56c4370081)
     )
@@ -1116,7 +1116,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 7ea32842-0c25-4bf4-aa7b-65b7f3795015)
     )
-    (fp_text value "Screw_Terminal_01x02" (at 13.4112 5.1181 90) (layer "F.Fab")
+    (fp_text value "Screw_Terminal_01x02" (at 13.4112 5.1181 90) (layer "F.Fab") hide
       (effects (font (size 1 1) (thickness 0.15)))
       (tstamp edb70a0d-7784-41da-afc0-c2bb654679cf)
     )
@@ -1256,7 +1256,7 @@
   (gr_rect (start 97.3582 100.3046) (end 116.1288 111.6584) (layer "F.SilkS") (width 0.15) (fill none) (tstamp afae5a95-b587-4667-855c-83f0a87d6006))
   (gr_line (start 119.2022 90.0176) (end 116.6622 92.5576) (layer "F.SilkS") (width 0.15) (tstamp b55f6fd6-b5a9-46c1-9ccf-a9b9dbedb0ae))
   (gr_rect (start 129.6162 59.1566) (end 143.9164 69.7992) (layer "F.SilkS") (width 0.15) (fill none) (tstamp d4a5b388-f6f5-4cd3-9027-04e62ebd2d83))
-  (gr_rect (start 59.4106 50.3555) (end 144.7682 114.0333) (layer "Edge.Cuts") (width 0.2) (fill none) (tstamp 8f72ca0e-c27a-4787-a8fb-6b666295e853))
+  (gr_rect (start 59.397 50.4825) (end 146.304 114.1603) (layer "Edge.Cuts") (width 0.2) (fill none) (tstamp 8f72ca0e-c27a-4787-a8fb-6b666295e853))
   (gr_text "Board Design 1.7\n\n\n" (at 83.82 55.88) (layer "B.SilkS") (tstamp 3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c)
     (effects (font (size 2 2) (thickness 0.25)) (justify mirror))
   )
