@@ -34,8 +34,8 @@ WebServer server(80); //Server on port 80
 
 SpeedyStepper stepper;              // Create a new instance of the Stepper class:
 const int trimPot = 34;             // Adjust the Speed of the trun
-const int highActivationPin = 23;   // For MOSFET
-const int lowActivationPin = 22;    // Low Level Trigger!
+const int mosfetActivationPin = 23;   // For MOSFET
+const int relayActivationPin = 22;    // Low Level Trigger!
 const int ledPin = 2;               // LED Built-in for Esp32
 const int rotatePin = 35;           // Pin for Pot to adjust turn.
 int speedy = 1000;                   // initial speed of stepper motor in steps / second.  Adjustable via trimPot
@@ -53,11 +53,11 @@ void setup() {
   Serial.begin(115200);
 #endif
 
-  pinMode(lowActivationPin, OUTPUT);
-  pinMode(highActivationPin, OUTPUT);
+  pinMode(relayActivationPin, OUTPUT);
+  pinMode(mosfetActivationPin, OUTPUT);
   pinMode(17, INPUT); // pin will determine direction of stepper motor travel
-  digitalWrite(lowActivationPin, HIGH);
-  digitalWrite(highActivationPin, LOW);  
+  digitalWrite(relayActivationPin, LOW);
+  digitalWrite(mosfetActivationPin, LOW);  
   delay(200); // give power time to stabilize.
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin,LOW);
@@ -141,8 +141,8 @@ void handleRoot() {
 void targetEdge() {
   server.send(200, "text/plain", "Targets Edged");
   delay(250);
-  digitalWrite(lowActivationPin, LOW);
-  digitalWrite(highActivationPin, HIGH);
+  digitalWrite(relayActivationPin, HIGH);
+  digitalWrite(mosfetActivationPin, HIGH);
   digitalWrite(ledPin, HIGH);
   
 #ifdef __DEBUG__
@@ -162,8 +162,8 @@ void targetEdge() {
 
 void targetFace() {
   server.send(200, "text/plain", "Targets Faced");
-  digitalWrite(lowActivationPin, HIGH);
-  digitalWrite(highActivationPin, LOW);
+  digitalWrite(relayActivationPin, LOW);
+  digitalWrite(mosfetActivationPin, LOW);
   digitalWrite(ledPin, LOW);
   
   
