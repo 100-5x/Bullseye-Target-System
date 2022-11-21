@@ -8,7 +8,7 @@
   https://dronebotworkshop.com
 */
 
-//#define __DEBUG__
+#define __DEBUG__
 
 #ifdef __DEBUG__
    #define print(...)   Serial.print(__VA_ARGS__)
@@ -195,14 +195,32 @@ void setup()
     delay(3000);
     ESP.restart();
   }
-
-
+  stepper.connectToPins(stepPin,dirPin);
 }
 
 void loop()
 {
     server.handleClient();
 
+
+moveSteps = map(analogRead(rotatePin), 5, 4096,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+
+  
+  if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+  
+  speedy = map(analogRead(trimPot), 0, 4096,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
+  stepper.setSpeedInStepsPerSecond(speedy);
+
+#ifdef __DEBUG__
+  delay(1000);
+  print("Speed: ");
+  println(speedy);
+  print("Direction: ");
+  println(moveSteps);
+  print("Steps: ");
+  println(Step);
+#endif
   
 //    broadcast('E');
 //    sleep(2000);
@@ -219,6 +237,18 @@ void targetEdge() {
     server.send(200,"text/plain", "Targets Edged");
       command.dir = 'E';
     broadcast(command.dir);
+      digitalWrite(relayActivationPin, HIGH);
+  digitalWrite(mosfetActivationPin, HIGH);
+  digitalWrite(ledPin, HIGH);
+  
+#ifdef __DEBUG__
+  println("Edged...");
+  println(Step);
+  print("Speed: ");
+  println(speedy);
+#endif
+
+  stepper.moveToPositionInSteps(Step);
   
 }
 
@@ -226,5 +256,18 @@ void targetFace() {
   server.send(200,"text/plain", "Targets Faced");
       command.dir = 'F';
     broadcast(command.dir);
+      digitalWrite(relayActivationPin, LOW);
+  digitalWrite(mosfetActivationPin, LOW);
+  digitalWrite(ledPin, LOW);
+  
+  
+#ifdef __DEBUG__
+  println("Faced...");
+  println(0);
+  print("Speed: ");
+  println(speedy);
+#endif
+
+  stepper.moveToPositionInSteps(0);
   
 }
