@@ -2,3 +2,5 @@
 .DS_Store
 8266_NODEMCU_ESP12F/fp-info-cache
 FTS/*
+PTS/PTS.ino
+PTS/fp-info-cache
