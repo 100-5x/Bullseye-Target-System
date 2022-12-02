@@ -1,10 +1,8 @@
 /*
-  ESP-NOW Multi Unit Demo
-  esp-now-multi.ino
-  Broadcasts control messages to all devices in network
-  Load script on multiple devices
 
-  DroneBot Workshop 2022
+ AS-IS No Warranty.  
+
+  Parts of code dervied from:
   https://dronebotworkshop.com
 */
 
