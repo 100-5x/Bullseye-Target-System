@@ -17,7 +17,7 @@
 
 #include <WebServer.h>
 #include <WiFi.h>
-const char* ssid = "target.Wifi";
+const char* ssid = "james.target.Wifi";
 WebServer server(80); //Server on port 80
 
 #include <SpeedyStepper.h>

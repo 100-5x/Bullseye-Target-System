@@ -534,7 +534,7 @@
     )
     (fp_circle (center 0 0) (end 3.2 0) (layer "Cmts.User") (width 0.15) (fill none) (tstamp 3ea5dd30-3aae-45b6-92e0-4ace6c0c6c47))
     (fp_circle (center 0 0) (end 3.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp 90200916-8985-4b7d-a612-577b9aa28177))
-    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask) (tstamp 30a3e08f-1864-4d1d-9e76-6ef868e514df))
+    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers F&B.Cu *.Mask) (tstamp 30a3e08f-1864-4d1d-9e76-6ef868e514df))
   )
 
   (footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (layer "F.Cu")
@@ -659,7 +659,7 @@
     )
     (fp_circle (center 0 0) (end 3.2 0) (layer "Cmts.User") (width 0.15) (fill none) (tstamp 3219f150-3bc2-4654-a438-d25869fd621c))
     (fp_circle (center 0 0) (end 3.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp 3b773391-573a-4ac4-841b-00f222b6a555))
-    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask) (tstamp cfa28603-1f68-4652-8645-abc6385f1329))
+    (pad "" np_thru_hole circle (at 0.127 0.1016) (size 3.2 3.2) (drill 3.2) (layers F&B.Cu *.Mask) (tstamp cfa28603-1f68-4652-8645-abc6385f1329))
   )
 
   (footprint "Potentiometer_THT:Potentiometer_Bourns_3339P_Vertical" (layer "F.Cu")
@@ -1172,7 +1172,7 @@
     )
     (fp_circle (center 0 0) (end 3.2 0) (layer "Cmts.User") (width 0.15) (fill none) (tstamp 6fd2c6fb-6e28-4a7e-9930-23bb5da8f727))
     (fp_circle (center 0 0) (end 3.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp d6e0fbe3-283a-4d7d-b413-12a9615a72aa))
-    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask) (tstamp b8096655-de58-4dfd-9372-19d7b3071845))
+    (pad "" np_thru_hole circle (at -0.0254 0) (size 3.2 3.2) (drill 3.2) (layers F&B.Cu *.Mask) (tstamp b8096655-de58-4dfd-9372-19d7b3071845))
   )
 
   (footprint "MountingHole:MountingHole_3.2mm_M3" (layer "F.Cu")
@@ -1198,7 +1198,7 @@
     )
     (fp_circle (center 0 0) (end 3.2 0) (layer "Cmts.User") (width 0.15) (fill none) (tstamp f36acaa9-3dc0-4e33-a774-794cc9e7767e))
     (fp_circle (center 0 0) (end 3.45 0) (layer "F.CrtYd") (width 0.05) (fill none) (tstamp ea882ba6-4683-48ce-b84a-1c6c3cf354a3))
-    (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers *.Cu *.Mask) (tstamp 83867bfa-5d17-47a6-9dfc-7d51fd0fed57))
+    (pad "" np_thru_hole circle (at -0.1016 -0.0254) (size 3.2 3.2) (drill 3.2) (layers F&B.Cu *.Mask) (tstamp 83867bfa-5d17-47a6-9dfc-7d51fd0fed57))
   )
 
   (footprint "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" (layer "F.Cu")
