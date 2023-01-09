@@ -41,7 +41,7 @@ target_command command;
 SpeedyStepper stepper;              // Create a new instance of the Stepper class:
 
 
-
+const char* ssid = "target.Wifi"; 
 const int trimPot = 34;             // Adjust the Speed of the trun
 const int mosfetActivationPin = 23;   // For MOSFET
 const int relayActivationPin = 22;    // Low Level Trigger!
@@ -166,7 +166,7 @@ void setup()
 
   
   WiFi.mode(WIFI_AP_STA);
-  WiFi.softAP("target.WiFi");
+  WiFi.softAP(ssid);
   IPAddress IP =WiFi.softAPIP();
   server.on("/edge", targetEdge);
   server.on("/face", targetFace);

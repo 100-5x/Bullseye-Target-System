@@ -70,19 +70,6 @@
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "DevKitC-4.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": false,
-          "pos_x": 603,
-          "pos_y": 147,
-          "size_x": 1280,
-          "size_y": 757
-        }
-      }
-    ]
+    "files": []
   }
 }
