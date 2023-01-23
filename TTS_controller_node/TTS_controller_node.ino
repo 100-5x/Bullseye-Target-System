@@ -40,8 +40,16 @@ target_command command;
 #define CCW -1
 SpeedyStepper stepper;              // Create a new instance of the Stepper class:
 
+//Wifi Variables
 
-const char* ssid = "target.Wifi"; 
+const char* ssid = "Indy1800.Wifi"; 
+const char* password       = "";   // SSID Password - Set to NULL to have an open AP
+const int   channel        = 3;                        // WiFi Channel number between 1 and 13
+const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
+const int   max_connection = 2;                         // Maximum simultaneous connected clients on the AP
+
+
+//options
 const int trimPot = 34;             // Adjust the Speed of the trun
 const int mosfetActivationPin = 23;   // For MOSFET
 const int relayActivationPin = 22;    // Low Level Trigger!
@@ -166,7 +174,7 @@ void setup()
 
   
   WiFi.mode(WIFI_AP_STA);
-  WiFi.softAP(ssid);
+  WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
   IPAddress IP =WiFi.softAPIP();
   server.on("/edge", targetEdge);
   server.on("/face", targetFace);

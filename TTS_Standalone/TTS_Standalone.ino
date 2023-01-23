@@ -17,7 +17,15 @@
 
 #include <WebServer.h>
 #include <WiFi.h>
-const char* ssid = "james.target.Wifi";
+//Wifi Variables
+
+const char* ssid = "MCFG.target.Wifi"; 
+const char* password       = "Bullseye2700";   // SSID Password - Set to NULL to have an open AP
+const int   channel        = 3;                        // WiFi Channel number between 1 and 13
+const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
+const int   max_connection = 2;                         // Maximum simultaneous connected clients on the AP
+
+
 WebServer server(80); //Server on port 80
 
 #include <SpeedyStepper.h>
@@ -78,7 +86,8 @@ void setup() {
   delay(250);
   //WiFi.softAP("target.Wifi");
   delay(150); // give power time to stabilize.
-  WiFi.softAP(ssid);
+  WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
+
   delay(100);
   IPAddress IP = WiFi.softAPIP();
   server.on("/edge", targetEdge);      //Which routine to handle at edge location
