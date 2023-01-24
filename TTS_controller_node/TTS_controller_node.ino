@@ -44,7 +44,7 @@ SpeedyStepper stepper;              // Create a new instance of the Stepper clas
 
 const char* ssid = "Indy1800.Wifi"; 
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
-const int   channel        = 3;                        // WiFi Channel number between 1 and 13
+const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
 const int   max_connection = 2;                         // Maximum simultaneous connected clients on the AP
 
@@ -174,8 +174,8 @@ void setup()
 
   
   WiFi.mode(WIFI_AP_STA);
-  WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
-  IPAddress IP =WiFi.softAPIP();
+   WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
+  //IPAddress IP =WiFi.softAPIP();
   server.on("/edge", targetEdge);
   server.on("/face", targetFace);
   server.on("/", handleRoot);
