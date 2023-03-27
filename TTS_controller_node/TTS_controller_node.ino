@@ -42,7 +42,7 @@ SpeedyStepper stepper;              // Create a new instance of the Stepper clas
 
 //Wifi Variables
 
-const char* ssid = "Indy1800.Wifi"; 
+const char* ssid = "target.Wifi"; 
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
@@ -212,9 +212,9 @@ void setup()
 void loop()
 {
     server.handleClient();
-    moveSteps = map(analogRead(rotatePin), 5, 4096,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+    moveSteps = map(analogRead(rotatePin), 5, 4095,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
     if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
-    speedy = map(analogRead(trimPot), 0, 4096,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
+    speedy = map(analogRead(trimPot), 0, 4095,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
     stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
     stepper.setSpeedInStepsPerSecond(speedy);
 
