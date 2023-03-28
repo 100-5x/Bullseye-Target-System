@@ -1,4 +1,4 @@
-#define __DEBUG__
+#define _DEBUG_
 
 
 /*
@@ -7,12 +7,18 @@
  * 
  */
 
-#ifdef __DEBUG__
-   #define print(...)   Serial.print(__VA_ARGS__)
-   #define println(...) Serial.println(__VA_ARGS__)
+#define _DEBUG_
+#if defined _DEBUG_
+   char printBuf[100];
+   #define debug_print(...) \
+     sprintf(printBuf, __VA_ARGS__); \
+     Serial.print(printBuf)
+   #define debug_println(...) \
+     sprintf(printBuf, __VA_ARGS__); \
+     Serial.println(printBuf)
 #else
-   #define print(...)
-   #define println(...)
+   #define debug_print(x)
+   #define debug_println(x)
 #endif
 
 
@@ -69,13 +75,8 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&myData, incomingData, sizeof(myData));
   if (myData.cmd == 'E') { targetEdge(); }
   if (myData.cmd == 'F') { targetFace(); }
-  #ifdef __DEBUG__
-    print("Bytes received: ");
-    println(len);
-    print("command: ");
-    println(myData.cmd);
-    println();
-  #endif
+  debug_print("Bytes received %i, command: %s", len, myData.cmd);
+   
 }
 
 //---------------------------------------//
@@ -85,7 +86,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 void setup() {
   
 
-#ifdef __DEBUG__
+#ifdef _DEBUG_
   Serial.begin(115200);
 #endif
 
@@ -101,17 +102,10 @@ void setup() {
   pinMode(trimPot, INPUT);
   pinMode(rotatePin,INPUT);
 
-  #ifdef __DEBUG__
-    print("Connecting to Stepper Driver…");
-  #endif
-
-  stepper.connectToPins(stepPin, dirPin);
-
+  debug_println("Connecting to Stepper Driver…");
  
-
-#ifdef __DEBUG__
-  print("Setting AP (Access Point)…");
-#endif
+  stepper.connectToPins(stepPin, dirPin);
+  debug_println("Setting AP (Access Point)…");
 
 if (digitalRead(25) == LOW) {
     // Standalone Mode
@@ -130,11 +124,8 @@ if (digitalRead(25) == LOW) {
   delay(100);
   server.begin();                      //Start server
   
-#ifdef __DEBUG__
-  println("HTTP server started");
-  print("IP address: ");
-  println(IP);
-#endif
+  debug_println("HTTP server started...");
+  debug_println("IP Address:  %s", IP);
 
 } else {
   //Woker Mode
@@ -143,9 +134,7 @@ if (digitalRead(25) == LOW) {
   WiFi.mode(WIFI_STA);
   //Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
-    #ifdef __DEBUG__
-      println("Error initializing ESP-NOW");
-    #endif
+    debug_println("Error initializing ESP-NOW");
     return;
   }
   // Once ESPNow is successfully Init, we will register for recv CB to
@@ -175,14 +164,9 @@ void loop(){
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
 
-#ifdef __DEBUG__
+#ifdef _DEBUG_
   delay(1000);
-  print("Speed: ");
-  println(speedy);
-  print("Direction: ");
-  println(moveSteps);
-  print("Steps: ");
-  println(Step);
+  debug_println("Speed: \t%i\tDirection: \t%i\t Steps: \t%i", speedy, moveSteps, Step);
 #endif
 
   //delay(250);
@@ -205,14 +189,7 @@ void targetEdge() {
   digitalWrite(relayActivationPin, HIGH);
   digitalWrite(mosfetActivationPin, HIGH);
   digitalWrite(ledPin, HIGH);
-  
-#ifdef __DEBUG__
-  println("Edged...");
-  println(Step);
-  print("Speed: ");
-  println(speedy);
-#endif
-
+  debug_println("Edged.  Position: %i\tSpeed: \t%i", Step, speedy);
   stepper.moveToPositionInSteps(Step);
  
 }
@@ -226,14 +203,8 @@ void targetFace() {
   digitalWrite(relayActivationPin, LOW);
   digitalWrite(mosfetActivationPin, LOW);
   digitalWrite(ledPin, LOW);
+  debug_println("Faced.  Position: 0 \tSpeed: \t%i", speedy);
   
-  
-#ifdef __DEBUG__
-  println("Faced...");
-  println(0);
-  print("Speed: ");
-  println(speedy);
-#endif
 
   stepper.moveToPositionInSteps(0);
   

@@ -83,17 +83,16 @@ void setup() {
 
 
   WiFi.mode(WIFI_AP);
-  delay(250);
+  delay(500);
   //WiFi.softAP("target.Wifi");
-  delay(150); // give power time to stabilize.
   WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
 
-  delay(100);
+  delay(250);
   IPAddress IP = WiFi.softAPIP();
   server.on("/edge", targetEdge);      //Which routine to handle at edge location
   server.on("/face", targetFace);      //Which routine to handle at face location
   server.on("/", handleRoot);          //Which routine to handle at root location
-  delay(100);
+  delay(250);
   server.begin();                      //Start server
   
 #ifdef __DEBUG__
