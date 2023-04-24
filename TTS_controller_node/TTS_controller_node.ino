@@ -6,16 +6,19 @@
   https://dronebotworkshop.com
 */
 
-//#define __DEBUG__
-
-#ifdef __DEBUG__
-   #define print(...)   Serial.print(__VA_ARGS__)
-   #define println(...) Serial.println(__VA_ARGS__)
+#define _DEBUG_
+#if defined _DEBUG_
+   char printBuf[100];
+   #define debug_print(...) \
+     sprintf(printBuf, __VA_ARGS__); \
+     Serial.print(printBuf)
+   #define debug_println(...) \
+     sprintf(printBuf, __VA_ARGS__); \
+     Serial.println(printBuf)
 #else
-   #define print(...)
-   #define println(...)
+   #define debug_print(...)
+   #define debug_println(...)
 #endif
-
 
 // Include Libraries
 #include <WiFi.h>
@@ -46,7 +49,7 @@ const char* ssid = "target.Wifi";
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
-const int   max_connection = 2;                         // Maximum simultaneous connected clients on the AP
+const int   max_connection = 1;                         // Maximum simultaneous connected clients on the AP
 
 
 //options
@@ -66,38 +69,15 @@ void formatMacAddress(const uint8_t *macAddr, char *buffer, int maxLength)
     snprintf(buffer, maxLength, "%02x:%02x:%02x:%02x:%02x:%02x", macAddr[0], macAddr[1], macAddr[2], macAddr[3], macAddr[4], macAddr[5],macAddr[6],macAddr[7],macAddr[8],macAddr[9]);
   }
 
-
-//void receiveCallback(const uint8_t *macAddr, const uint8_t *data, int dataLen)
-//  // Called when data is received
-//  {
-//    // Only allow a maximum of 250 characters in the message + a null terminating byte
-//    char buffer[ESP_NOW_MAX_DATA_LEN + 1];
-//    int msgLen = min(ESP_NOW_MAX_DATA_LEN, dataLen);
-//    strncpy(buffer, (const char *)data, msgLen);
-//  
-//    // Make sure we are null terminated
-//    buffer[msgLen] = 0;
-//  
-//    // Format the MAC address
-//    char macStr[18];
-//    formatMacAddress(macAddr, macStr, 18);
-//  
-//    // Send Debug log message to the serial port
-//    Serial.printf("Received message from: %s - %s\n", macStr, buffer);
-//  
-//  
-//  }
-
-
 void sentCallback(const uint8_t *macAddr, esp_now_send_status_t status)
   // Called when data is sent
   {
     char macStr[18];
     formatMacAddress(macAddr, macStr, 18);
-    print("Last Packet Sent to: ");
-    println(macStr);
-    print("Last Packet Send Status: ");
-    println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+    debug_println("Last Packet Sent to: ");
+    debug_println(macStr);
+    debug_print("Last Packet Send Status: ");
+    debug_println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
   }
 
 void broadcast(const char message)
@@ -114,35 +94,35 @@ void broadcast(const char message)
     // Send message
     esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *)&command, sizeof(target_command));
   
-    #ifdef __DEBUG__
+    #ifdef _DEBUG_
     // Print results to serial monitor
     if (result == ESP_OK)
     {
-      println("Broadcast message success");
+      debug_println("Broadcast message success");
     }
     else if (result == ESP_ERR_ESPNOW_NOT_INIT)
     {
-      println("ESP-NOW not Init.");
+      debug_println("ESP-NOW not Init.");
     }
     else if (result == ESP_ERR_ESPNOW_ARG)
     {
-      println("Invalid Argument");
+      debug_println("Invalid Argument");
     }
     else if (result == ESP_ERR_ESPNOW_INTERNAL)
     {
-      println("Internal Error");
+      debug_println("Internal Error");
     }
     else if (result == ESP_ERR_ESPNOW_NO_MEM)
     {
-      println("ESP_ERR_ESPNOW_NO_MEM");
+      debug_println("ESP_ERR_ESPNOW_NO_MEM");
     }
     else if (result == ESP_ERR_ESPNOW_NOT_FOUND)
     {
-      println("Peer not found.");
+      debug_println("Peer not found.");
     }
     else
     {
-      println("Unknown error");
+      debug_println("Unknown error");
     }
     #endif
   }
@@ -151,7 +131,7 @@ void setup()
 {
 
   // Set up Serial Monitor
-  #ifdef __DEBUG__
+  #ifdef _DEBUG_
     Serial.begin(115200);
   #endif
   delay(500);
@@ -168,44 +148,33 @@ void setup()
   pinMode(rotatePin,INPUT);
 
   // Set ESP32 in STA mode to begin with
-  #ifdef __DEBUG__
-    print("Setting AP (Access Point)…");
-  #endif
-
-  
+  debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP_STA);
-   WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
-  //IPAddress IP =WiFi.softAPIP();
+  WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
+  IPAddress IP =WiFi.softAPIP();
   server.on("/edge", targetEdge);
   server.on("/face", targetFace);
   server.on("/", handleRoot);
+  debug_println("IP Address for system:  %u.%u.%u.%u", IP[0], IP[1], IP[2], IP[3]);
+  debug_println("Starting http Server...");
   server.begin();
 
-  #ifdef __DEBUG__
-    println("ESP-NOW Broadcast Demo");
-    print("MAC Address: ");
-    println(WiFi.macAddress());
-  #endif
 
 
   // Initialize ESP-NOW
   if (esp_now_init() == ESP_OK)
   {
-     #ifdef __DEBUG__
-        println("ESP-NOW Init Success");
-     #endif
+    debug_println("ESP-NOW Init Success");
     //6esp_now_register_recv_cb(receiveCallback);
     esp_now_register_send_cb(sentCallback);
   }
   else
   {
-     #ifdef __DEBUG__
-    println("ESP-NOW Init Failed");
-    #endif
+    debug_println("ESP-NOW Init Failed");
     delay(3000);
     ESP.restart();
   }
-  
+  debug_println("Connecting to Stepper Motor...");
   stepper.connectToPins(stepPin,dirPin);
 }
 
@@ -218,20 +187,11 @@ void loop()
     stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
     stepper.setSpeedInStepsPerSecond(speedy);
 
-#ifdef __DEBUG__
-  delay(1000);
-  print("Speed: ");
-  println(speedy);
-  print("Direction: ");
-  println(moveSteps);
-  print("Steps: ");
-  println(Step);
-#endif
-  
-//    broadcast('E');
-//    sleep(2000);
-//    broadcast('F');
-//  
+    #ifdef _DEBUG_
+      delay(1000);
+    #endif
+    debug_println("Speed: %i\tDirection: %i\tSteps: %i", speedy,moveSteps,Step);
+      
 }
 
 void handleRoot() {
@@ -240,40 +200,27 @@ void handleRoot() {
 }
 
 void targetEdge() {
+
     server.send(200,"text/plain", "Targets Edged");
     command.dir = 'E';
     broadcast(command.dir);
     digitalWrite(relayActivationPin, HIGH);
     digitalWrite(mosfetActivationPin, HIGH);
     digitalWrite(ledPin, HIGH);
-  
-#ifdef __DEBUG__
-  println("Edged...");
-  println(Step);
-  print("Speed: ");
-  println(speedy);
-#endif
-
-  stepper.moveToPositionInSteps(Step);
+    debug_println("Edged.  Step: %i\tSpeed: %i", Step, speedy);
+    stepper.moveToPositionInSteps(Step);
   
 }
 
 void targetFace() {
+
   server.send(200,"text/plain", "Targets Faced");
   command.dir = 'F';
   broadcast(command.dir);
   digitalWrite(relayActivationPin, LOW);
   digitalWrite(mosfetActivationPin, LOW);
   digitalWrite(ledPin, LOW);
-  
-  
-#ifdef __DEBUG__
-  println("Faced...");
-  println(0);
-  print("Speed: ");
-  println(speedy);
-#endif
-
+  debug_println("Faced.  Step: 0\tSpeed: %i", speedy);
   stepper.moveToPositionInSteps(0);
   
 }
