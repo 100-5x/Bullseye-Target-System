@@ -6,7 +6,7 @@
   https://dronebotworkshop.com
 */
 
-#define _DEBUG_
+//#define _DEBUG_
 #if defined _DEBUG_
    char printBuf[100];
    #define debug_print(...) \
