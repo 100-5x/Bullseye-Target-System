@@ -1065,11 +1065,11 @@
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 1e4eb116-2a40-4b5e-83f6-4aa2116a30e4)
     )
-    (fp_text value "1kΩ" (at 5.08 -2.54 90) (layer "F.Fab")
+    (fp_text value "1kΩ" (at 5.08 -2.54 90) (layer "F.Fab") hide
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 3a617df5-bcd7-4539-8dc8-1c0c9cb75f3e)
     )
-    (fp_text user "${REFERENCE}" (at 5.08 0 90) (layer "F.Fab")
+    (fp_text user "1kΩ" (at 5.08 0 90) (layer "F.Fab")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp 2ad5ab7c-da0f-4a06-ab9b-9162ae4195fc)
     )
