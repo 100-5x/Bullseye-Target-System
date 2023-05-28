@@ -57,6 +57,7 @@ const int   max_connection = 1;                         // Maximum simultaneous 
 
 // Which mode
 #define tts_mode 25           // LOW = Standalone.  High = WorkerNode
+bool standalone =  true;         // will get switched in setup via tts_mode test
 
 
 WebServer server(80); //Server on port 80
@@ -88,7 +89,8 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
 void setup() {
   
- 
+ if (digitalRead(tts_mode) == HIGH) { !standalone;  } // Worker Mode
+
 #ifdef _DEBUG_
   Serial.begin(115200);
 #endif
@@ -113,12 +115,12 @@ delay(200); // give power time to stabilize.
   digitalWrite(relayActivationPin, LOW);
   digitalWrite(mosfetActivationPin, LOW);  
 
-if (digitalRead(tts_mode) == LOW) {
-    // Standalone Mode
+if (standalone) {
+    // Standalone Mode;  standalone = true;
+    // setup wifi hotspot, accept incoming http connections
+
   debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP);
-  delay(250);
-  //WiFi.softAP("target.Wifi");
   delay(150); // give power time to stabilize.
   debug_println("HTTP server starting");
   WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
@@ -135,15 +137,17 @@ if (digitalRead(tts_mode) == LOW) {
   debug_println("IP Address for system:  %u.%u.%u.%u", IP[0], IP[1], IP[2], IP[3]);
 
 } else {
-  //Woker Mode
+  //Woker Mode, standlone = FALSE
   debug_println("Worker Node Set.  Configure STA Mode...")
   //Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
+
   //Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
     debug_println("Error initializing ESP-NOW");
     return;
   } else { debug_println("Initialzation of STA completed successfully...") }
+
   // Once ESPNow is successfully Init, we will register for recv CB to
   // get recv packer info
   esp_now_register_recv_cb(OnDataRecv);
@@ -162,7 +166,7 @@ void loop(){
   delay(1000);
 #endif
   
-  if (digitalRead(tts_mode) == LOW) { server.handleClient();  }
+  if (standalone) { server.handleClient();  }
   
   moveSteps = map(analogRead(rotatePin), 5, 4095,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
   if (digitalRead(directionPin) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
@@ -185,7 +189,7 @@ void handleRoot() {
 //---------------------------------------//
 
 void targetEdge() {
-  server.send(200, "text/plain", "Targets Edged");
+  if (standalone) { server.send(200, "text/plain", "Targets Edged"); }
   digitalWrite(relayActivationPin, HIGH);
   digitalWrite(mosfetActivationPin, HIGH);
   digitalWrite(ledPin, HIGH);
@@ -199,7 +203,7 @@ void targetEdge() {
 //---------------------------------------//
 
 void targetFace() {
-  server.send(200, "text/plain", "Targets Faced");
+  if (standalone) { server.send(200, "text/plain", "Targets Faced"); }
   digitalWrite(relayActivationPin, LOW);
   digitalWrite(mosfetActivationPin, LOW);
   digitalWrite(ledPin, LOW);
