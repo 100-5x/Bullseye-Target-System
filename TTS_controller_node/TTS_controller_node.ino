@@ -33,35 +33,11 @@ typedef struct target_command {
 
 target_command command;
 
-// Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
-// DIR- && PUL- to GND
-#include <SpeedyStepper.h>
-#define dirPin 18 // DIR+
-#define stepPin 19 // PUL+
-#define motorInterfaceType 1
-#define CW 1
-#define CCW -1
-SpeedyStepper stepper;              // Create a new instance of the Stepper class:
-
-//Wifi Variables
-
-const char* ssid = "target.Wifi"; 
-const char* password       = "";   // SSID Password - Set to NULL to have an open AP
-const int   channel        = 1;                        // WiFi Channel number between 1 and 13
-const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
-const int   max_connection = 1;                         // Maximum simultaneous connected clients on the AP
-
-
-//options
-const int trimPot = 34;             // Adjust the Speed of the trun
-const int mosfetActivationPin = 23;   // For MOSFET
-const int relayActivationPin = 22;    // Low Level Trigger!
-const int ledPin = 2;               // LED Built-in for Esp32
-const int rotatePin = 35;           // Pin for Pot to adjust turn.
-int speedy = 1000;                   // initial speed of stepper motor in steps / second.  Adjustable via trimPot
-int Step = 0;
-int moveSteps = 200;
-
+const char* ssid           = "target.Wifi"; 
+const char* password       = "";               // SSID Password - Set to NULL to have an open AP
+const int   channel        = 1;                // WiFi Channel number between 1 and 13
+const bool  hide_SSID      = false;            // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
+const int   max_connection = 1;                // Maximum simultaneous connected clients on the AP
 
 void formatMacAddress(const uint8_t *macAddr, char *buffer, int maxLength)
   // Formats MAC Address
@@ -87,66 +63,29 @@ void broadcast(const char message)
     uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
     esp_now_peer_info_t peerInfo = {};
     memcpy(&peerInfo.peer_addr, broadcastAddress, 10 );
-    if (!esp_now_is_peer_exist(broadcastAddress))
-    {
-      esp_now_add_peer(&peerInfo);
-    }
+    if (!esp_now_is_peer_exist(broadcastAddress)) { esp_now_add_peer(&peerInfo); }
     // Send message
     esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *)&command, sizeof(target_command));
   
     #ifdef _DEBUG_
-    // Print results to serial monitor
-    if (result == ESP_OK)
-    {
-      debug_println("Broadcast message success");
-    }
-    else if (result == ESP_ERR_ESPNOW_NOT_INIT)
-    {
-      debug_println("ESP-NOW not Init.");
-    }
-    else if (result == ESP_ERR_ESPNOW_ARG)
-    {
-      debug_println("Invalid Argument");
-    }
-    else if (result == ESP_ERR_ESPNOW_INTERNAL)
-    {
-      debug_println("Internal Error");
-    }
-    else if (result == ESP_ERR_ESPNOW_NO_MEM)
-    {
-      debug_println("ESP_ERR_ESPNOW_NO_MEM");
-    }
-    else if (result == ESP_ERR_ESPNOW_NOT_FOUND)
-    {
-      debug_println("Peer not found.");
-    }
-    else
-    {
-      debug_println("Unknown error");
-    }
+        // Print results to serial monitor
+        if (result == ESP_OK)                         { debug_println("Broadcast message success"); }
+        else if (result == ESP_ERR_ESPNOW_NOT_INIT)   { debug_println("ESP-NOW not Init."); }
+        else if (result == ESP_ERR_ESPNOW_ARG)        { debug_println("Invalid Argument"); }
+        else if (result == ESP_ERR_ESPNOW_INTERNAL    { debug_println("Internal Error"); }
+        else if (result == ESP_ERR_ESPNOW_NO_MEM)     { debug_println("ESP_ERR_ESPNOW_NO_MEM"); }
+        else if (result == ESP_ERR_ESPNOW_NOT_FOUND)  { debug_println("Peer not found."); }
+        else                                          { debug_println("Unknown error"); }
     #endif
   }
 
 void setup()
 {
-
   // Set up Serial Monitor
   #ifdef _DEBUG_
     Serial.begin(115200);
   #endif
   delay(500);
-
-  pinMode(relayActivationPin, OUTPUT);
-  pinMode(mosfetActivationPin, OUTPUT);
-  pinMode(17, INPUT); // pin will determine direction of stepper motor travel
-  digitalWrite(relayActivationPin, LOW);
-  digitalWrite(mosfetActivationPin, LOW);  
-  delay(200); // give power time to stabilize.
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin,LOW);
-  pinMode(trimPot, INPUT);
-  pinMode(rotatePin,INPUT);
-
   // Set ESP32 in STA mode to begin with
   debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP_STA);
@@ -158,9 +97,6 @@ void setup()
   debug_println("IP Address for system:  %u.%u.%u.%u", IP[0], IP[1], IP[2], IP[3]);
   debug_println("Starting http Server...");
   server.begin();
-
-
-
   // Initialize ESP-NOW
   if (esp_now_init() == ESP_OK)
   {
@@ -171,56 +107,24 @@ void setup()
   else
   {
     debug_println("ESP-NOW Init Failed");
+    debug_println(" .... restarting.");
     delay(3000);
     ESP.restart();
   }
-  debug_println("Connecting to Stepper Motor...");
-  stepper.connectToPins(stepPin,dirPin);
 }
 
-void loop()
-{
-    server.handleClient();
-    moveSteps = map(analogRead(rotatePin), 5, 4095,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
-    if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
-    speedy = map(analogRead(trimPot), 0, 4095,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
-    stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
-    stepper.setSpeedInStepsPerSecond(speedy);
+void loop() { }
 
-    #ifdef _DEBUG_
-      delay(1000);
-    #endif
-    debug_println("Speed: %i\tDirection: %i\tSteps: %i", speedy,moveSteps,Step);
-      
-}
-
-void handleRoot() {
-    server.send(200,"text/plain", "Target system should use face or edge");
-    
-}
+void handleRoot() { server.send(200,"text/plain", "Target system should use face or edge"); }
 
 void targetEdge() {
-
     server.send(200,"text/plain", "Targets Edged");
     command.dir = 'E';
     broadcast(command.dir);
-    digitalWrite(relayActivationPin, HIGH);
-    digitalWrite(mosfetActivationPin, HIGH);
-    digitalWrite(ledPin, HIGH);
-    debug_println("Edged.  Step: %i\tSpeed: %i", Step, speedy);
-    stepper.moveToPositionInSteps(Step);
-  
 }
 
 void targetFace() {
-
   server.send(200,"text/plain", "Targets Faced");
   command.dir = 'F';
   broadcast(command.dir);
-  digitalWrite(relayActivationPin, LOW);
-  digitalWrite(mosfetActivationPin, LOW);
-  digitalWrite(ledPin, LOW);
-  debug_println("Faced.  Step: 0\tSpeed: %i", speedy);
-  stepper.moveToPositionInSteps(0);
-  
 }

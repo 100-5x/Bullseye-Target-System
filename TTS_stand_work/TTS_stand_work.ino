@@ -27,8 +27,8 @@
 
 // Define stepper motor connections and motor interface type. Motor interface type must be set to 1 when using a driver:
 // DIR- && PUL- to GND
-#define dirPin 18                     // DIR+
-#define stepPin 19                    // PUL+
+#define dirPin 18                     // DIR+ used to connect to the motor driver
+#define stepPin 19                    // PUL+ used to connect to the motor driver
 #define motorInterfaceType 1
 const int trimPot = 34;               // Adjust the Speed of the trun
 const int ledPin = 2;                 // LED Built-in for Esp32
@@ -37,11 +37,14 @@ int speedy = 1000;                    // initial speed of stepper motor in steps
 int Step = 0;
 int moveSteps = 200;
 SpeedyStepper stepper;                // Create a new instance of the Stepper class:
+#define CW 1
+#define CCW -1
+#define directionPin 17               // directionPin defines the switch direction.
+
+
+//MOSFET & RElay options:
 const int mosfetActivationPin = 23;   // For MOSFET
 const int relayActivationPin = 22;    // External Trigger
-
-
-
 
 
 //Wifi Variables
@@ -50,8 +53,12 @@ const char* password       = "";   // SSID Password - Set to NULL to have an ope
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
 const int   max_connection = 1;                         // Maximum simultaneous connected clients on the AP
-#define CW 1
-#define CCW -1
+
+
+// Which mode
+#define tts_mode 25           // LOW = Standalone.  High = WorkerNode
+
+
 WebServer server(80); //Server on port 80
 
 
@@ -86,21 +93,27 @@ void setup() {
   Serial.begin(115200);
 #endif
 
+delay(200); // give power time to stabilize.
+
+// Setup outputs:
+  pinMode(ledPin, OUTPUT);
   pinMode(relayActivationPin, OUTPUT);
   pinMode(mosfetActivationPin, OUTPUT);
-  pinMode(17, INPUT); // pin will determine direction of stepper motor travel
-  pinMode(25, INPUT); // pin will determine worker or standalone mode
-  digitalWrite(relayActivationPin, LOW);
-  digitalWrite(mosfetActivationPin, LOW);  
-  delay(200); // give power time to stabilize.
-  pinMode(ledPin, OUTPUT);
-  digitalWrite(ledPin,LOW);
+
+//setup INPUTs
+
+  pinMode(directionPin, INPUT); // pin will determine direction of stepper motor travel
+  pinMode(tts_mode, INPUT); // pin will determine worker or standalone mode
   pinMode(trimPot, INPUT);
   pinMode(rotatePin,INPUT);
+  
+  digitalWrite(ledPin,LOW);
   debug_println("Connecting to Stepper Driver…");
   stepper.connectToPins(stepPin, dirPin);
+  digitalWrite(relayActivationPin, LOW);
+  digitalWrite(mosfetActivationPin, LOW);  
 
-if (digitalRead(25) == LOW) {
+if (digitalRead(tts_mode) == LOW) {
     // Standalone Mode
   debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP);
@@ -123,13 +136,14 @@ if (digitalRead(25) == LOW) {
 
 } else {
   //Woker Mode
+  debug_println("Worker Node Set.  Configure STA Mode...")
   //Set device as a Wi-Fi Station
   WiFi.mode(WIFI_STA);
   //Init ESP-NOW
   if (esp_now_init() != ESP_OK) {
     debug_println("Error initializing ESP-NOW");
     return;
-  }
+  } else { debug_println("Initialzation of STA completed successfully...") }
   // Once ESPNow is successfully Init, we will register for recv CB to
   // get recv packer info
   esp_now_register_recv_cb(OnDataRecv);
@@ -148,11 +162,10 @@ void loop(){
   delay(1000);
 #endif
   
-  if (digitalRead(25) == LOW) {
-  server.handleClient();          //Handle client requests  s
-  }
+  if (digitalRead(tts_mode) == LOW) { server.handleClient();  }
+  
   moveSteps = map(analogRead(rotatePin), 5, 4095,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
-  if (digitalRead(17) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
+  if (digitalRead(directionPin) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
   speedy = map(analogRead(trimPot), 0, 4095,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
   stepper.setSpeedInStepsPerSecond(speedy);
@@ -163,6 +176,7 @@ void loop(){
 //------------ HTTP root-----------------//
 //---------------------------------------//
 void handleRoot() {
+  debug_println("HTTP call was neither face or edge..");
   server.send(200, "text/plain", "Target system requires http://192.168.4.1/face or http://192.168.4.1/edge");
 }
 
