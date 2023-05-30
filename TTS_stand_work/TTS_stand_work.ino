@@ -119,41 +119,46 @@ if (standalone) {
     // Standalone Mode;  standalone = true;
     // setup wifi hotspot, accept incoming http connections
 
-  debug_println("Setting AP (Access Point)…");
-  WiFi.mode(WIFI_AP);
-  delay(150); // give power time to stabilize.
-  debug_println("HTTP server starting");
-  WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
-  debug_println("HTTP server started");
-  delay(100);
-  debug_println("Obtaining IP Address.");
-  IPAddress IP = WiFi.softAPIP();
-  delay(100);
-  server.on("/edge", targetEdge);      //Which routine to handle at edge location
-  server.on("/face", targetFace);      //Which routine to handle at face location
-  server.on("/", handleRoot);          //Which routine to handle at root location
-  delay(100);
-  server.begin();                      //Start server
-  debug_println("IP Address for system:  %u.%u.%u.%u", IP[0], IP[1], IP[2], IP[3]);
+    debug_println("Setting AP (Access Point)…");
+    WiFi.mode(WIFI_AP);
+    delay(150); // give power time to stabilize.
+    debug_println("HTTP server starting");
+    WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
+    debug_println("HTTP server started");
+    delay(100);
+    debug_println("Obtaining IP Address.");
+    IPAddress IP = WiFi.softAPIP();
+    delay(100);
+    debug_println("IP Address for system:  %u.%u.%u.%u", IP[0], IP[1], IP[2], IP[3]);
+
+
+    // Webserver configs:
+    server.on("/edge", targetEdge);      //Which routine to handle at edge location
+    server.on("/face", targetFace);      //Which routine to handle at face location
+    server.on("/", handleRoot);          //Which routine to handle at root location
+    delay(100);
+    server.begin();                      //Start server
+    
 
 } else {
-  //Woker Mode, standlone = FALSE
-  debug_println("Worker Node Set.  Configure STA Mode...")
-  //Set device as a Wi-Fi Station
-  WiFi.mode(WIFI_STA);
+    //Woker Mode, standlone = FALSE
+    debug_println("Worker Node Set.  Configure STA Mode...")
+    //Set device as a Wi-Fi Station
+    WiFi.mode(WIFI_STA);
 
-  //Init ESP-NOW
-  if (esp_now_init() != ESP_OK) {
-    debug_println("Error initializing ESP-NOW");
-    return;
-  } else { debug_println("Initialzation of STA completed successfully...") }
+    //Init ESP-NOW
+    if (esp_now_init() != ESP_OK) {
+      debug_println("Error initializing ESP-NOW");
+      return;
+    } else { debug_println("Initialzation of STA completed successfully...") }
 
-  // Once ESPNow is successfully Init, we will register for recv CB to
-  // get recv packer info
-  esp_now_register_recv_cb(OnDataRecv);
-}
+    // Once ESPNow is successfully Init, we will register for recv CB to
+    // get recv packer info
+    esp_now_register_recv_cb(OnDataRecv);
+} // End of Else
+
   delay(100);
-}
+} // End of setup()
 
 
 //---------------------------------------//
