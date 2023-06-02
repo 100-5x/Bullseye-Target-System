@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 53,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -64,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "ffffff0_7fffffff",
+    "visible_layers": "ffffdff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
@@ -72,31 +72,6 @@
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "TTS Design.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": false,
-          "pos_x": 425,
-          "pos_y": 305,
-          "size_x": 1280,
-          "size_y": 731
-        }
-      },
-      {
-        "name": "TTS Design.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": false,
-          "pos_x": 487,
-          "pos_y": 181,
-          "size_x": 1280,
-          "size_y": 720
-        }
-      }
-    ]
+    "files": []
   }
 }

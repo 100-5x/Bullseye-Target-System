@@ -1698,7 +1698,7 @@
     )
     (pin "1" (uuid ef47f751-5e36-421f-a437-277b181f76aa))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0114") (unit 1)
         )
@@ -1723,7 +1723,7 @@
     )
     (pin "1" (uuid aacbbece-ee9d-4332-a54e-6609c2ad4f38))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR06") (unit 1)
         )
@@ -1750,7 +1750,7 @@
     (pin "2" (uuid 1ca1b1cd-a80a-4c8a-800c-eb396f2439a1))
     (pin "3" (uuid da9bb832-b25e-4d7b-983f-ac8ada18463b))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "RV1") (unit 1)
         )
@@ -1775,7 +1775,7 @@
     )
     (pin "1" (uuid 8262d73f-77f8-4aa6-935c-d7922538cbdd))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0105") (unit 1)
         )
@@ -1800,7 +1800,7 @@
     )
     (pin "1" (uuid b3ac3b4a-a529-4f75-8f45-f5a12c51e3f6))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0101") (unit 1)
         )
@@ -1830,7 +1830,7 @@
     (pin "5" (uuid 1d85aff0-1031-4f90-b315-ccebc798fea9))
     (pin "6" (uuid d6c1904b-9161-4961-8b5f-319720503771))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "SW1") (unit 1)
         )
@@ -1841,10 +1841,10 @@
   (symbol (lib_id "Device:R_US") (at 198.12 121.92 270) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 1717e436-eee6-457c-98c2-60a5762e1d9b)
-    (property "Reference" "R3" (at 198.12 115.57 90)
+    (property "Reference" "R3" (at 198.12 116.84 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "220" (at 198.12 118.11 90)
+    (property "Value" "220Ω" (at 198.12 119.38 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (at 197.866 122.936 90)
@@ -1856,7 +1856,7 @@
     (pin "1" (uuid 2dd4613b-5377-4f00-800e-9ef11d1e4ca0))
     (pin "2" (uuid c9a4a89c-f299-424e-a238-126a05adfd26))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "R3") (unit 1)
         )
@@ -1881,7 +1881,7 @@
     )
     (pin "1" (uuid 8d6c700f-6f12-4700-9271-6958eff3ed06))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR02") (unit 1)
         )
@@ -1906,7 +1906,7 @@
     )
     (pin "1" (uuid 343cc0a7-6658-4c8e-83db-712006420140))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR04") (unit 1)
         )
@@ -1931,7 +1931,7 @@
     )
     (pin "1" (uuid 00770bfa-96ae-4c6f-9900-3a3167576667))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR08") (unit 1)
         )
@@ -1956,7 +1956,7 @@
     )
     (pin "1" (uuid 10dd476c-bf50-4546-8876-0357dd8b078e))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR01") (unit 1)
         )
@@ -1981,7 +1981,7 @@
     )
     (pin "1" (uuid 346f0f31-6b91-4471-90c8-854b12089102))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR010") (unit 1)
         )
@@ -2007,7 +2007,7 @@
     (pin "1" (uuid 24b3feb7-27f9-44f2-96dc-740dab12e397))
     (pin "2" (uuid 456727da-8a87-44d3-aae8-bef2161c1513))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "C1") (unit 1)
         )
@@ -2032,7 +2032,7 @@
     )
     (pin "1" (uuid 7ad27a82-d80c-4291-a967-b4aad7bbbe32))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0102") (unit 1)
         )
@@ -2059,7 +2059,7 @@
     (pin "2" (uuid f1ca8295-1ee0-411a-8df2-7fe5970b5ef7))
     (pin "3" (uuid a294e839-445a-493d-bd25-6564f556b419))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "Q1") (unit 1)
         )
@@ -2083,7 +2083,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "H1") (unit 1)
         )
@@ -2108,7 +2108,7 @@
     )
     (pin "1" (uuid 515e2c6f-8e34-45f6-bbba-def929372a01))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0111") (unit 1)
         )
@@ -2133,7 +2133,7 @@
     )
     (pin "1" (uuid 952c1ffe-862b-4859-80f1-af2b2264602a))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0113") (unit 1)
         )
@@ -2157,7 +2157,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "H4") (unit 1)
         )
@@ -2184,7 +2184,7 @@
     (pin "2" (uuid 8cc566d0-be60-4153-9214-a1a71d2f1dcb))
     (pin "3" (uuid 7643e928-e880-4108-bd19-39c3dc7e59b9))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "J5") (unit 1)
         )
@@ -2209,7 +2209,7 @@
     )
     (pin "1" (uuid 2f1912eb-8bfb-46c8-8736-b0b6cce5f886))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR09") (unit 1)
         )
@@ -2234,7 +2234,7 @@
     )
     (pin "1" (uuid b09e3509-bf8b-4ec2-b534-dca2a404d1a6))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0108") (unit 1)
         )
@@ -2258,7 +2258,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "H3") (unit 1)
         )
@@ -2283,7 +2283,7 @@
     )
     (pin "1" (uuid 44f75391-fa77-48d5-a351-ed04ac6da376))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0107") (unit 1)
         )
@@ -2308,7 +2308,7 @@
     )
     (pin "1" (uuid fa79e1b7-941d-403d-a532-2dd0c6e1369f))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0110") (unit 1)
         )
@@ -2334,7 +2334,7 @@
     (pin "1" (uuid 507d469d-229a-43e9-93b4-75331ea7e6e8))
     (pin "2" (uuid c6d627a1-b580-4a26-8306-82ce966c9949))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "D1") (unit 1)
         )
@@ -2359,7 +2359,7 @@
     )
     (pin "1" (uuid 7a30b1c4-e477-4b8f-9830-aeff13b23ff8))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0104") (unit 1)
         )
@@ -2421,7 +2421,7 @@
     (pin "8" (uuid 7cc0de51-022b-444b-acc5-4232437eee9f))
     (pin "9" (uuid dec3bbc4-f589-46b5-bdda-79d9355a4d90))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "U1") (unit 1)
         )
@@ -2448,7 +2448,7 @@
     (pin "2" (uuid b2ef652b-d664-400f-85a5-6245ccc751c7))
     (pin "3" (uuid 700be5a6-f36a-400d-8ba2-928378cb197c))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "RV2") (unit 1)
         )
@@ -2478,7 +2478,7 @@
     (pin "5" (uuid 1d85aff0-1031-4f90-b315-ccebc798feaa))
     (pin "6" (uuid d6c1904b-9161-4961-8b5f-319720503772))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "SW2") (unit 1)
         )
@@ -2503,7 +2503,7 @@
     )
     (pin "1" (uuid 7c73bc36-f706-4b76-b11e-a2945690ae0b))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0103") (unit 1)
         )
@@ -2531,7 +2531,7 @@
     (pin "3" (uuid a0d9153a-6e79-496f-abe8-5213f8dca169))
     (pin "4" (uuid 8e2cd386-3482-4b33-9a53-4cbe713ff5e0))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "U2") (unit 1)
         )
@@ -2556,7 +2556,7 @@
     )
     (pin "1" (uuid 2f0d7e0e-4f38-4e11-a403-acd098fc9806))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR07") (unit 1)
         )
@@ -2581,7 +2581,7 @@
     )
     (pin "1" (uuid 275ab4ea-013d-4810-898e-d3934ea4748d))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR03") (unit 1)
         )
@@ -2607,7 +2607,7 @@
     (pin "1" (uuid d6d5f00a-86f4-49a0-8e50-fff153c285da))
     (pin "2" (uuid 43860c65-231b-4c71-9df0-62c5e0311874))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "R6") (unit 1)
         )
@@ -2632,7 +2632,7 @@
     )
     (pin "1" (uuid ed51d924-259f-4d56-8ecd-3908a44bf5d0))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0106") (unit 1)
         )
@@ -2658,7 +2658,7 @@
     (pin "1" (uuid 1ea71896-b08f-4349-bfcb-ce4f435c2899))
     (pin "2" (uuid 39086122-4b74-4e38-b1c1-5e6aadaf9aff))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "J1") (unit 1)
         )
@@ -2686,7 +2686,7 @@
     (pin "3" (uuid a620a22e-05bf-43e0-9b1e-ae1311f46bf7))
     (pin "4" (uuid f38d5d0f-9966-4b19-b73d-973d346022c3))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "J3") (unit 1)
         )
@@ -2711,7 +2711,7 @@
     )
     (pin "1" (uuid f88aea72-e5f9-468a-a535-733a04cb118c))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0109") (unit 1)
         )
@@ -2735,7 +2735,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "H2") (unit 1)
         )
@@ -2761,7 +2761,7 @@
     (pin "1" (uuid c009cf4e-3ec0-40f8-9661-92c084f85f9e))
     (pin "2" (uuid 4158b3c1-80c6-4cc5-ad0e-0d40ed5c6725))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "J2") (unit 1)
         )
@@ -2772,10 +2772,10 @@
   (symbol (lib_id "Device:R_Small_US") (at 251.46 127 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid e43aa29c-427c-47ef-9d4b-7a062511150f)
-    (property "Reference" "R1" (at 251.46 120.65 90)
+    (property "Reference" "R1" (at 251.46 121.92 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "10k" (at 251.46 123.19 90)
+    (property "Value" "10kΩ" (at 251.46 124.46 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (at 251.46 127 0)
@@ -2787,7 +2787,7 @@
     (pin "1" (uuid 41da9c83-45f7-46b3-a48a-1e28f3a8e38a))
     (pin "2" (uuid be905ca8-d439-4735-93c5-76ca2584dc09))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "R1") (unit 1)
         )
@@ -2812,7 +2812,7 @@
     )
     (pin "1" (uuid c55a7d7e-7aa8-4248-abf8-bdbfc524f2df))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "#PWR0112") (unit 1)
         )
@@ -2826,7 +2826,7 @@
     (property "Reference" "R4" (at 196.85 111.76 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "330" (at 196.85 113.03 90)
+    (property "Value" "330Ω" (at 196.85 113.03 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" (at 197.104 108.204 90)
@@ -2838,7 +2838,7 @@
     (pin "1" (uuid 68ac5527-a02d-44ae-8ed9-e5fa1d9e4991))
     (pin "2" (uuid fa3a27bb-70dd-477a-8592-2bd6cca34d6a))
     (instances
-      (project "DevKitC-4"
+      (project "TTS Design"
         (path "/9dd029d7-3440-476c-a069-461d6098ced3"
           (reference "R4") (unit 1)
         )
