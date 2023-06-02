@@ -1982,7 +1982,7 @@
   (gr_text "IN" (at 138.7348 75.2094) (layer "B.SilkS") (tstamp 99aff104-5321-4d60-b686-bfa6ef910ebe)
     (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
   )
-  (gr_text "If using a pass through to a linear actuator, connect OUTPUT +/- to\nyour actuator.  \n  ** Voltage is the same as input.\n\nCW/CCW switch changes motor direction.\n\nWorker/Standalone switch will either allow it to \nhost it's own WiFI signal (standalone)\n  or work as a slave.  Amaster controller is seperate." (at 76.2 83.82 270) (layer "B.SilkS") (tstamp a5b3c15f-6d4d-454f-9970-cef1b1df5bd6)
+  (gr_text "If using a pass through to a linear actuator, connect OUTPUT +/- to\nyour actuator.  \n  ** Voltage is the same as input.\n\nCW/CCW switch changes motor direction.\n\nWorker/Standalone switch will either allow it to \nhost it's own WiFI signal (standalone)\n  or work as a worker node.  A master controller is seperate." (at 76.2 83.82 270) (layer "B.SilkS") (tstamp a5b3c15f-6d4d-454f-9970-cef1b1df5bd6)
     (effects (font (size 1 1) (thickness 0.15)) (justify bottom mirror))
   )
   (gr_text "DIR" (at 139.0904 85.6742) (layer "B.SilkS") (tstamp afa2b521-0bfc-42e4-8b30-86df147444e6)
