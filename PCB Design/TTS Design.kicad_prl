@@ -74,18 +74,6 @@
   "project": {
     "files": [
       {
-        "name": "TTS Design.kicad_pcb",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": false,
-          "pos_x": 487,
-          "pos_y": 181,
-          "size_x": 1280,
-          "size_y": 720
-        }
-      },
-      {
         "name": "TTS Design.kicad_sch",
         "open": false,
         "window": {
@@ -95,6 +83,18 @@
           "pos_y": 305,
           "size_x": 1280,
           "size_y": 731
+        }
+      },
+      {
+        "name": "TTS Design.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": false,
+          "pos_x": 487,
+          "pos_y": 181,
+          "size_x": 1280,
+          "size_y": 720
         }
       }
     ]
