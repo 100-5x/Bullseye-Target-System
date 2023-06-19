@@ -1,6 +1,0 @@
-press learning button on receiver module eight times.  It will clear any existing pairing.  You should see a flashing light seven times to confirm.
-Wait 3 seconds
-Press the LEARNING button 1 time
-Wait 3 seconds
-Expect the LED to turn OFF 
-Press the LEARNING button once more.  The light should come on and stay on.  Then press run the controller. The receiver LED will turn off.
