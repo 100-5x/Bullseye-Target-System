@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 31,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -72,6 +72,31 @@
     "version": 3
   },
   "project": {
-    "files": []
+    "files": [
+      {
+        "name": "TTS Design.kicad_pcb",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": false,
+          "pos_x": 186,
+          "pos_y": 116,
+          "size_x": 1589,
+          "size_y": 932
+        }
+      },
+      {
+        "name": "TTS Design.kicad_sch",
+        "open": false,
+        "window": {
+          "display": 0,
+          "maximized": false,
+          "pos_x": 73,
+          "pos_y": 0,
+          "size_x": 1835,
+          "size_y": 1036
+        }
+      }
+    ]
   }
 }
