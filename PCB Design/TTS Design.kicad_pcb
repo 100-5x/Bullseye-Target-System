@@ -2009,7 +2009,7 @@
   (gr_text "If using an extenral relay:\nUse SIG to the INPUT of \nthe relay.\nDC+ = 5v\nHigh Level Trigger" (at 116.84 111.76) (layer "B.SilkS") (tstamp 3dd27e38-f30b-4d55-8499-b1493401d690)
     (effects (font (size 0.75 0.75) (thickness 0.15)) (justify right bottom mirror))
   )
-  (gr_text "Board Design 2.0\n\n\n" (at 83.82 55.88) (layer "B.SilkS") (tstamp 3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c)
+  (gr_text "Board Design 2.1\n\n\n" (at 83.82 55.88) (layer "B.SilkS") (tstamp 3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c)
     (effects (font (size 2 2) (thickness 0.25)) (justify mirror))
   )
   (gr_text "-" (at 138.6586 67.2846 -90) (layer "B.SilkS") (tstamp 4d68bb28-d2aa-4bb1-81d3-9e3de1916bce)

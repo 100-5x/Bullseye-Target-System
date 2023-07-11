@@ -25,7 +25,7 @@
 #include <esp_now.h>
 #include <WebServer.h>
 
-WebServer server(80);
+
 
 typedef struct target_command {
     char dir;
@@ -37,7 +37,9 @@ const char* ssid           = "target.Wifi";
 const char* password       = "";               // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;            // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
-const int   max_connection = 1;                // Maximum simultaneous connected clients on the AP
+const int   max_connection = 2;                // Maximum simultaneous connected clients on the AP
+
+WebServer server(80);
 
 void formatMacAddress(const uint8_t *macAddr, char *buffer, int maxLength)
   // Formats MAC Address
@@ -72,7 +74,7 @@ void broadcast(const char message)
         if (result == ESP_OK)                         { debug_println("Broadcast message success"); }
         else if (result == ESP_ERR_ESPNOW_NOT_INIT)   { debug_println("ESP-NOW not Init."); }
         else if (result == ESP_ERR_ESPNOW_ARG)        { debug_println("Invalid Argument"); }
-        else if (result == ESP_ERR_ESPNOW_INTERNAL    { debug_println("Internal Error"); }
+        else if (result == ESP_ERR_ESPNOW_INTERNAL)   { debug_println("Internal Error"); }
         else if (result == ESP_ERR_ESPNOW_NO_MEM)     { debug_println("ESP_ERR_ESPNOW_NO_MEM"); }
         else if (result == ESP_ERR_ESPNOW_NOT_FOUND)  { debug_println("Peer not found."); }
         else                                          { debug_println("Unknown error"); }
@@ -113,17 +115,19 @@ void setup()
   }
 }
 
-void loop() { }
+void loop() { server.handleClient(); }
 
 void handleRoot() { server.send(200,"text/plain", "Target system should use face or edge"); }
 
 void targetEdge() {
+    debug_println("Edge command received.");
     server.send(200,"text/plain", "Targets Edged");
     command.dir = 'E';
     broadcast(command.dir);
 }
 
 void targetFace() {
+  debug_println("Face command received.");
   server.send(200,"text/plain", "Targets Faced");
   command.dir = 'F';
   broadcast(command.dir);
