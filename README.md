@@ -3,7 +3,7 @@
 
 The Bullseye Turning Target System was developed for the practical precision pistol shooter. This system compliments Tom Talpey's excellent Bullseye Match app for your phone. Download the app through the App store of your choice or [The Bullseye App](https://www.bullseyematch.app) website. 
 
-Each system can completely built on your own (DIY) or can be purchased for $135 and contains a fully soldered circuit board with mounting hardware, including 8 metal screws and 4 plastic mounting standoffs. For reference on what a fully built turning target system looks like, see the Stepper Motor pic below. Additional items that can be utilized within the turning target system include Solenoid (AC/DC) for pneumatic turning and linear actuator.
+Each system can completely built on your own (DIY). It can be [purchased](http://indy1800.org/tts.html) and contains a fully soldered circuit board with mounting hardware, including 8 metal screws and 4 plastic mounting standoffs. For reference on what a fully built turning target system looks like, see the Stepper Motor pic below. Additional items that can be utilized within the turning target system include Solenoid (AC/DC) for pneumatic turning and linear actuator.
 
 [View in Action!](https://github.com/100-5x/Bullseye-Target-System/blob/main/photos/IMG_2864.mov) {click this link and then "View Raw" on next page}
 
