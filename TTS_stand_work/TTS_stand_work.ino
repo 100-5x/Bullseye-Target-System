@@ -173,7 +173,7 @@ void loop(){
   
   if (standalone) { server.handleClient();  }
   
-  moveSteps = map(analogRead(rotatePin), 5, 4095,210,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
+  moveSteps = map(analogRead(rotatePin), 5, 4095,275,45); // Rescale to potentiometer's voltage (from 0V to 3.3V):
   if (digitalRead(directionPin) == HIGH) { Step = (CW * moveSteps); } else { Step =  (CCW * moveSteps); }
   speedy = map(analogRead(trimPot), 0, 4095,2000,400);   // Rescale to potentiometer's voltage (from 0V to 3.3V):
   stepper.setAccelerationInStepsPerSecondPerSecond(speedy);
