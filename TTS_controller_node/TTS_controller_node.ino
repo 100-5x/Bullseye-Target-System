@@ -8,7 +8,7 @@
 
 //#define _DEBUG_
 #if defined _DEBUG_
-   char printBuf[100];
+   char printBuf[200];
    #define debug_print(...) \
      sprintf(printBuf, __VA_ARGS__); \
      Serial.print(printBuf)
