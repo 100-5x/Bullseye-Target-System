@@ -33,7 +33,7 @@ typedef struct target_command {
 
 target_command command;
 
-const char* ssid           = "target.Wifi"; 
+const char* ssid           = "Indy1800.Wifi"; 
 const char* password       = "";               // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;            // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
@@ -87,12 +87,14 @@ void setup()
   #ifdef _DEBUG_
     Serial.begin(115200);
   #endif
-  delay(500);
+  delay(100);
   // Set ESP32 in STA mode to begin with
   debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP_STA);
   WiFi.softAP(ssid, password, channel, hide_SSID, max_connection);
+  delay(250);
   IPAddress IP =WiFi.softAPIP();
+  delay(200);
   server.on("/edge", targetEdge);
   server.on("/face", targetFace);
   server.on("/", handleRoot);
