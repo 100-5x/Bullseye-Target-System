@@ -41,6 +41,7 @@ SpeedyStepper stepper;                // Create a new instance of the Stepper cl
 #define CCW -1
 #define directionPin 17               // directionPin defines the switch direction.
 
+uint32_t Freq = 0;
 
 //MOSFET & RElay options:
 const int mosfetActivationPin = 23;   // For MOSFET
@@ -89,6 +90,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 
 void setup() {
   
+  setCpuFrequencyMhz(60);
  if (digitalRead(tts_mode) == HIGH) { !standalone;  } // Worker Mode
 
 #ifdef _DEBUG_
@@ -158,6 +160,8 @@ if (standalone) {
 } // End of Else
 
   delay(100);
+
+ btStop(); // stop BLE
 } // End of setup()
 
 
