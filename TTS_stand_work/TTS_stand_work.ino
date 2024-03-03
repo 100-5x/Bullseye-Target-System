@@ -48,7 +48,7 @@ const int relayActivationPin = 22;    // External Trigger
 
 
 //Wifi Variables
-const char* ssid		   = "target.Wifi"; 
+const char* ssid		   = "Nicole.target.Wifi"; 
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
@@ -88,8 +88,7 @@ void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
 //---------------------------------------//
 
 void setup() {
-  
- if (digitalRead(tts_mode) == HIGH) { !standalone;  } // Worker Mode
+
 
 #ifdef _DEBUG_
   Serial.begin(115200);
@@ -108,12 +107,23 @@ delay(200); // give power time to stabilize.
   pinMode(tts_mode, INPUT); // pin will determine worker or standalone mode
   pinMode(trimPot, INPUT);
   pinMode(rotatePin,INPUT);
-  
   digitalWrite(ledPin,LOW);
+
+  
   debug_println("Connecting to Stepper Driver…");
   stepper.connectToPins(stepPin, dirPin);
   digitalWrite(relayActivationPin, LOW);
   digitalWrite(mosfetActivationPin, LOW);  
+
+
+
+  debug_print("testing for TTS mode....");
+ if (digitalRead(tts_mode) == HIGH) { 
+                  standalone = false;
+                  debug_println("Worker Mode");
+                  } 
+         else {debug_println("Standalone Mode");}
+
 
 if (standalone) {
     // Standalone Mode;  standalone = true;
@@ -142,7 +152,7 @@ if (standalone) {
 
 } else {
     //Woker Mode, standlone = FALSE
-    debug_println("Worker Node Set.  Configure STA Mode...")
+    debug_println("Worker Node Set.  Configure STA Mode...");
     //Set device as a Wi-Fi Station
     WiFi.mode(WIFI_STA);
 
@@ -150,7 +160,7 @@ if (standalone) {
     if (esp_now_init() != ESP_OK) {
       debug_println("Error initializing ESP-NOW");
       return;
-    } else { debug_println("Initialzation of STA completed successfully...") }
+    } else { debug_println("Initialzation of STA completed successfully..."); }
 
     // Once ESPNow is successfully Init, we will register for recv CB to
     // get recv packer info

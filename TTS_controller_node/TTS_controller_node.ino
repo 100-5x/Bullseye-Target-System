@@ -33,7 +33,7 @@ typedef struct target_command {
 
 target_command command;
 
-const char* ssid           = "Indy1800.Wifi"; 
+const char* ssid           = "private.Wifi"; 
 const char* password       = "";               // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;            // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
