@@ -6,7 +6,7 @@
 
 //#define _DEBUG_
 #if defined _DEBUG_
-   char printBuf[100];
+   char printBuf[200];
    #define debug_print(...) \
      sprintf(printBuf, __VA_ARGS__); \
      Serial.print(printBuf)
@@ -48,7 +48,7 @@ const int relayActivationPin = 22;    // External Trigger
 
 
 //Wifi Variables
-const char* ssid		   = "Nicole.target.Wifi"; 
+const char* ssid		   = "target.Wifi"; 
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
@@ -178,7 +178,7 @@ if (standalone) {
 void loop(){
 
 #ifdef _DEBUG_
-  delay(1000);
+  delay(2000);
 #endif
   
   if (standalone) { server.handleClient();  }
