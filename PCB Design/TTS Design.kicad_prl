@@ -66,24 +66,17 @@
     "visible_layers": "ffffdff_ffffffff",
     "zone_display_mode": 0
   },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
+  },
   "meta": {
     "filename": "TTS Design.kicad_prl",
     "version": 3
   },
   "project": {
-    "files": [
-      {
-        "name": "TTS Design.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": false,
-          "pos_x": 73,
-          "pos_y": 0,
-          "size_x": 1835,
-          "size_y": 1036
-        }
-      }
-    ]
+    "files": []
   }
 }
