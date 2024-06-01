@@ -8231,7 +8231,7 @@
 			(justify right bottom mirror)
 		)
 	)
-	(gr_text "Board Design 2.1\n\n\n"
+	(gr_text "Board Design 2.2\n\n\n"
 		(at 83.82 55.88 0)
 		(layer "B.SilkS")
 		(uuid "3ed6227c-bf0c-4ff8-bb4c-b0837ecf7b4c")

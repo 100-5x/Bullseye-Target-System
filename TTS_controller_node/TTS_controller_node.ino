@@ -106,6 +106,11 @@ void setup()
   {
     debug_println("ESP-NOW Init Success");
     //6esp_now_register_recv_cb(receiveCallback);
+    // Once ESPNow is successfully Init, we will register for recv CB to
+    // get recv packer info
+    // NOTE: This will fail on ESP-IDF v5+
+    // Use ESP32 board version: 2.0.17.
+    // More info: https://forum.arduino.cc/t/esp-now-problem/1242953/5
     esp_now_register_send_cb(sentCallback);
   }
   else

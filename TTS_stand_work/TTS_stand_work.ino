@@ -1,6 +1,7 @@
 /*
  * 
  * Except as written in this agreement, Developer’s work product is provided ​“AS IS”.”
+*
  * 
  */
 
@@ -75,6 +76,10 @@ typedef struct tts_struct {
 tts_struct myData;
 
 //callback function that will be executed when data is received
+// changes coming to ESP-IDF;  Change board version to 2.0.17 as a work around
+// if ESP-IDF > 5, then this will need changed:
+// void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingData, int len) { 
+// if ESP-IDF < 5 use this:
 void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   memcpy(&myData, incomingData, sizeof(myData));
   if (myData.cmd == 'E') { targetEdge(); }
@@ -164,6 +169,9 @@ if (standalone) {
 
     // Once ESPNow is successfully Init, we will register for recv CB to
     // get recv packer info
+    // NOTE: This will fail on ESP-IDF v5+
+    // Use ESP32 board version: 2.0.17.
+    // More info: https://forum.arduino.cc/t/esp-now-problem/1242953/5
     esp_now_register_recv_cb(OnDataRecv);
 } // End of Else
 
