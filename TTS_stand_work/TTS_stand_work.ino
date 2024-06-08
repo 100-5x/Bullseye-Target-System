@@ -7,7 +7,7 @@
 
 //#define _DEBUG_
 #if defined _DEBUG_
-   char printBuf[200];
+   char printBuf[156];
    #define debug_print(...) \
      sprintf(printBuf, __VA_ARGS__); \
      Serial.print(printBuf)
@@ -49,7 +49,7 @@ const int relayActivationPin = 22;    // External Trigger
 
 
 //Wifi Variables
-const char* ssid		   = "target.Wifi"; 
+const char* ssid		   = "target.WiFi"; 
 const char* password       = "";   // SSID Password - Set to NULL to have an open AP
 const int   channel        = 1;                        // WiFi Channel number between 1 and 13
 const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
@@ -77,15 +77,16 @@ tts_struct myData;
 
 //callback function that will be executed when data is received
 // changes coming to ESP-IDF;  Change board version to 2.0.17 as a work around
-// if ESP-IDF > 5, then this will need changed:
-// void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingData, int len) { 
+// if ESP-IDF > 5, then this will need to be coded:
+ void OnDataRecv(const esp_now_recv_info_t *recv_info, const uint8_t *incomingData, int len) { 
 // if ESP-IDF < 5 use this:
-void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
+//void OnDataRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
+  debug_println("Receiving incoming command.");
   memcpy(&myData, incomingData, sizeof(myData));
+  debug_println("Bytes received: %i Command: %c", len, myData.cmd);
   if (myData.cmd == 'E') { targetEdge(); }
   if (myData.cmd == 'F') { targetFace(); }
-  debug_println("Bytes received: %i Command: %s", len, myData.cmd);
-  
+  debug_println("Exiting OnDataRecv...");
 }
 
 //---------------------------------------//

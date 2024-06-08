@@ -64,7 +64,7 @@ void broadcast(const char message)
     // Broadcast a message to every device in range
     uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
     esp_now_peer_info_t peerInfo = {};
-    memcpy(&peerInfo.peer_addr, broadcastAddress, 10 );
+    memcpy(&peerInfo.peer_addr, broadcastAddress, sizeof(broadcastAddress) );
     if (!esp_now_is_peer_exist(broadcastAddress)) { esp_now_add_peer(&peerInfo); }
     // Send message
     esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *)&command, sizeof(target_command));
