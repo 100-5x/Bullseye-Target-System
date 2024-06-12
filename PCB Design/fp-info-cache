@@ -1,4 +1,4 @@
-23152188247021601
+23153906403960225
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -2540,6 +2540,13 @@ DCDC_Generic-5v
 0
 8
 4
+CUSTOM
+ESP32-Combined
+ESP32-DevKitC: https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-devkitc.html
+ESP32
+0
+38
+38
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
