@@ -49,11 +49,11 @@ const int relayActivationPin = 22;    // External Trigger
 
 
 //Wifi Variables
-const char* ssid		   = "target.WiFi"; 
-const char* password       = "";   // SSID Password - Set to NULL to have an open AP
-const int   channel        = 1;                        // WiFi Channel number between 1 and 13
-const bool  hide_SSID      = false;                     // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
-const int   max_connection = 1;                         // Maximum simultaneous connected clients on the AP
+const char* ssid		        = "target.WiFi";   //  
+const char* password        = "";              // SSID Password - Set to NULL to have an open AP;  Any password MUST be >= 8 char
+const int   channel         = 1;               // WiFi Channel number between 1 and 13
+const bool  hide_SSID       = false;           // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
+const int   max_connection  = 1;               // Maximum simultaneous connected clients on the AP
 
 
 // Which mode
