@@ -39,6 +39,8 @@ const int   channel        = 1;                // WiFi Channel number between 1 
 const bool  hide_SSID      = false;            // To disable SSID broadcast -> SSID will not appear in a basic WiFi scan
 const int   max_connection = 1;                // Maximum simultaneous connected clients on the AP
 
+static   uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+
 WebServer server(80);
 
 void formatMacAddress(const uint8_t *macAddr, char *buffer, int maxLength)
@@ -62,7 +64,7 @@ void broadcast(const char message)
   // Emulates a broadcast
   {
     // Broadcast a message to every device in range
-    uint8_t broadcastAddress[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+   
     esp_now_peer_info_t peerInfo = {};
     memcpy(&peerInfo.peer_addr, broadcastAddress, sizeof(broadcastAddress) );
     if (!esp_now_is_peer_exist(broadcastAddress)) { esp_now_add_peer(&peerInfo); }
@@ -88,6 +90,7 @@ void setup()
     Serial.begin(115200);
   #endif
   delay(100);
+
   // Set ESP32 in STA mode to begin with
   debug_println("Setting AP (Access Point)…");
   WiFi.mode(WIFI_AP_STA);
