@@ -2566,7 +2566,7 @@
 			(net 32 "Net-(D1-A)")
 			(pinfunction "IN-")
 			(pintype "input")
-			(uuid "6a2eccf3-7593-4a4a-802a-dd5893686071")
+			(uuid "d45a5501-803b-492f-b64b-46077c919e36")
 		)
 		(pad "2" thru_hole circle
 			(at -10.414 2.54)
@@ -2588,7 +2588,7 @@
 			(net 1 "VCC")
 			(pinfunction "IN+")
 			(pintype "input")
-			(uuid "816e5c5b-f2ca-49ee-8e89-2357dc2fb29d")
+			(uuid "c689363f-4b6f-491c-b760-08590640b216")
 		)
 		(pad "3" thru_hole circle
 			(at 8.128 -7.62)
@@ -2610,7 +2610,7 @@
 			(net 2 "GND")
 			(pinfunction "5v-")
 			(pintype "output")
-			(uuid "70731976-d2a6-4afe-862d-fb4f5dcfe48c")
+			(uuid "e1219778-f59e-4dbf-8885-bd0deccdadb1")
 		)
 		(pad "4" thru_hole circle
 			(at 8.128 2.54)
@@ -2632,7 +2632,7 @@
 			(net 5 "+5V")
 			(pinfunction "5v")
 			(pintype "output")
-			(uuid "d7fab015-ea63-49aa-b8df-3fc50bfceeb4")
+			(uuid "b65f0c21-ebe5-4d9a-83ca-828a0db27cd6")
 		)
 		(embedded_fonts no)
 	)
