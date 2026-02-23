@@ -115,6 +115,9 @@ void setup()
     // Use ESP32 board version: 2.0.17.
     // More info: https://forum.arduino.cc/t/esp-now-problem/1242953/5
     esp_now_register_send_cb(sentCallback);
+
+    // Board 3.3.5
+    //esp_now_register_send_cb((esp_now_send_cb_t)sentCallback);
   }
   else
   {
