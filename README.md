@@ -17,4 +17,4 @@ Programmable options for your target turning system include:
 See the [Wiki](https://github.com/100-5x/Bullseye-Target-System/wiki/Mounting-and-using-the-Turning-Target-System) for more details!
 
 
-Email me at: smdial@alumni.purdue.edu
+Email me at: smdial@icloud.com
